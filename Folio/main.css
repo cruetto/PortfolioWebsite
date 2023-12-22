@@ -1,0 +1,332 @@
+﻿/* Copy on email
+Animation for photos 
+Media*/
+
+*{
+	border: solid 1px;
+}
+
+body {
+	font-family: Courier; 
+	font-size: 25px; 
+	color: #ffffff;
+	
+	background-image: url(img/);
+	background-color: #111111;
+}
+
+p{
+	color: #b6b8b9;
+}
+
+/*-------------------Hello-start-------------------*/
+.hello{
+	width: auto;
+	margin: 350px auto 500px auto;
+	white-space: nowrap;
+	text-align: center;
+	
+}
+.hello p{
+	font-size: 35px;
+}
+/*-------------------Helo-end-------------------*/
+
+/*-------------------About-start-------------------*/
+
+
+.about-title
+{
+	text-align: center;
+}
+
+.about{
+	display: grid;
+	grid-template-columns: 2fr 3fr;
+	grid-template-rows: 1fr 5fr 2fr 3fr;
+
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+.about span{
+	margin: 0px;
+	padding: 0px;
+	color:green;
+}
+
+.about span:hover{
+	color: white;
+	transition-property: all;
+	transition-duration: .3s;
+	transition-timing-function: ease-in-out;
+}
+
+.about .text{
+	margin: 0px;
+	padding: 0px;
+	color:#b6b8b9;
+}
+
+.about .Photo {
+	grid-column: 1 / 2;
+	grid-row: 1 / 6;
+
+
+
+	
+
+	background: url(img/ProfilePhoto.jpg) no-repeat;
+	background-position: 20%;
+	background-size: 300px;
+	background-attachment: fixed;
+
+
+   
+}
+
+.about .title{
+	margin: 0;
+	grid-column: 2 / 3;
+	grid-row: 1 / 2;
+}
+
+.about .text{
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;
+}
+
+.about .number{
+	grid-column: 2 / 3;
+	grid-row: 3 / 4;
+}
+
+.about .email{
+	grid-column: 2 / 3;
+	grid-row: 4 / 5;
+}
+
+/*Social-start*/
+.about .socials{
+
+	grid-column: 2 / 3;
+	grid-row: 5 / 6;
+}
+
+.socials .fa {
+	padding: 20px;
+	font-size: 40px;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+	border-radius: 50%;
+
+	background: #1b1b1b;
+	color: green;
+  }
+  
+.socials .fa:hover {
+	color: white;
+	opacity: 0.7;
+	transition-property: all;
+	transition-duration: .3s;
+	transition-timing-function: ease-in-out;
+}
+/*-------------------About-end-------------------*/
+
+
+
+
+/*-------------------Portfolio-start-------------------*/
+.Projects{
+	text-align: center;
+	margin-top: 300px;
+	margin-bottom: 150px;
+}
+
+.Portfolio {
+
+	display:grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 1fr 5fr 1fr;
+
+
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-bottom: 300px;
+}
+
+.Portfolio .Photo {
+	
+	grid-column: 1 / 2;
+	grid-row: 1 / 4;
+
+	width: 300px;
+	height: 400px;
+	
+
+	background: url(img/ProfilePhoto.jpg) right no-repeat;
+	background-size: contain;
+}
+.Portfolio .Name{
+	grid-column: 2 / 3;
+	grid-row: 1 / 2;
+	
+	margin: 0;
+}
+.Portfolio p{
+	grid-column: 2 / 3;
+	grid-row: 2/ 3;
+
+	margin: 0;
+}
+.Portfolio .View{
+	grid-column: 2 / 3;
+	grid-row: 3 / 4;
+
+	width: 181px;
+	color: green;
+	margin: 0;
+}
+.Portfolio .View:hover{
+	color: white;
+	transition-property: all;
+	transition-duration: .3s;
+	transition-timing-function: ease-in-out;
+}
+
+/*-------------------Portfolio-end-------------------*/
+
+/*-------------------Portfolio2-start-------------------*/
+.Portfolio2 {
+
+	display:grid;
+	grid-template-columns: 3fr 2fr;
+	grid-template-rows: 1fr 5fr 1fr;
+
+
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-bottom: 300px;
+}
+
+.Portfolio2 .Photo {
+	
+	grid-column: 2 / 3;
+	grid-row: 1 / 4;
+
+	width: 300px;
+	height: 400px;
+	
+
+	background-image: url(img/ProfilePhoto.jpg);
+	background-position: right;
+	background-repeat: no-repeat;
+	background-size: contain;
+	
+
+}
+.Portfolio2 .Name{
+	grid-column: 1 / 2;
+	grid-row: 1 / 2;
+	
+	margin: 0;
+
+}
+.Portfolio2 p{
+	grid-column: 1 / 2;
+	grid-row: 2/ 3;
+
+	margin: 0;
+
+}
+.Portfolio2 .View{
+	grid-column: 1 / 2;
+	grid-row: 3 / 4;
+
+	width: 181px;
+	color: green;
+	margin: 0;
+
+}
+.Portfolio2 .View:hover{
+	color: white;
+	transition-property: all;
+	transition-duration: .3s;
+	transition-timing-function: ease-in-out;
+}
+/*-------------------Portfolio2-end-------------------*/
+
+
+/*-------------------Print-start-------------------*/
+.hero-btn{
+	color: green;
+}
+/*-------------------Print-end-------------------*/
+
+
+
+
+
+/*-------------------Footer-start-------------------*/
+.Contact{
+	text-align: center;
+	margin-bottom: 100px;
+}
+
+.Contact span{
+	margin: auto;
+	display: block;
+	width: 680px;
+	color: green;
+	margin-bottom: 60px;
+}
+.Contact span:hover{
+	color: white;
+	transition-property: all;
+	transition-duration: .3s;
+	transition-timing-function: ease-in-out;
+}
+/*-------------------Footer-end-------------------*/
+
+
+/*JAVASCRIPT*/
+.tooltip {
+	position: relative;
+	display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+	visibility: hidden;
+	width: 140px;
+	background-color: #555;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px;
+	position: absolute;
+	z-index: 1;
+	bottom: 150%;
+	left: 50%;
+	margin-left: -75px;
+	opacity: 0;
+	transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
+  }
