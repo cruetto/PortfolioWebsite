@@ -1,11 +1,56 @@
+<<<<<<< HEAD
 ﻿/* Copy on email
+=======
+﻿/* 
+Copy on email messagebox
+>>>>>>> b064a96 (Made some work with "Copied" Messagebox)
 Animation for photos 
-Media*/
+Media
+
+*/
 
 *{
 	border: solid 1px;
 }
 
+<<<<<<< HEAD
+=======
+:root {
+	--first-color: #008f00;
+	--second-color: white;
+	--background-color: #101010;
+	--background-border-color:#272727;
+}
+
+/* Background squares */
+#box1{
+	position: fixed;
+	right: -5%;
+	bottom: 0%;
+	z-index: -100;
+
+	width: 600px;
+	height: 600px;
+	transform: rotate(37deg);
+
+	border: ridge 1px;
+	border-color: var(--background-border-color);
+}	
+#box2{
+	position: fixed;
+	top: 10%;
+	z-index: -100;
+	
+	width: 400px;
+	height: 400px;
+	
+	transform: translate(-0px) rotate(15deg);
+	border: groove 1px;
+	border-color: var(--background-border-color);
+}
+
+
+>>>>>>> b064a96 (Made some work with "Copied" Messagebox)
 body {
 	font-family: Courier; 
 	font-size: 25px; 
@@ -292,10 +337,85 @@ p{
 /*-------------------Footer-end-------------------*/
 
 
+<<<<<<< HEAD
 /*JAVASCRIPT*/
 .tooltip {
 	position: relative;
 	display: inline-block;
+=======
+
+
+
+/*-------------------Copied-start-------------------*/
+.copyText::after{
+	position: relative;
+	bottom: 100%;
+	content: "copied";
+}
+
+
+ /* .copied{
+	font-family: Courier; 
+	position: relative;
+	width: auto;
+	font-size: 20px;
+	font-weight: bold;
+	height: 30px;
+	font-style: italic;
+
+
+	color: var(--);
+	bottom: 10%;
+	left: 50%;
+	transform: translate(-50%);
+	z-index: 100;
+
+	opacity: 0;
+} */
+
+ /* .copied::before{
+	z-index: -1;
+	content: '';
+	position: absolute;
+
+	
+	transform: translate(-25%, -25%);
+	width: 200%;
+	height: 60px;
+	background: var(--background-border-color);
+	border-radius: 25px;
+	box-shadow: 0 1px 5px var(--background-border-color);
+}  */
+
+@keyframes appear-disappear{
+	from{
+		opacity: 1;
+	}
+	to{	
+		opacity: 0;
+	}
+}
+
+.copied-enable-animation{
+	animation: appear-disappear 5s 1;
+}
+/*-------------------Copied-end-------------------*/
+
+
+
+
+
+/*-------------------Appear-start-------------------*/
+.appear-object{
+
+	opacity: 0;
+    transform: scale(1.2);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .appear-object {
+    transition: opacity 0.2s linear, transform 0.5s ease;
+>>>>>>> b064a96 (Made some work with "Copied" Messagebox)
   }
   
   .tooltip .tooltiptext {

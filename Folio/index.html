@@ -5,95 +5,109 @@
 	
 	<link rel="stylesheet" href="main.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="main.js"></script>
+	
 	
 	<title>My Portfolio</title>
 </head>
 
+<!-- background -->
+<div id="box1"></div>
+<div id="box2"></div>
+
 <body>
+	<header class="header">
+		<div class="navbar">
+			
+			<a href="#idAbout">About</a>
+			<a href="#idProjects">Projects</a>
+			<a href="#idContacts">Contacts</a>
+		</div>
+	</header>	
+		
+	
+	
+
 	<!-- Hello -->
-	<div class="hello">
+	<section class="hello" id="idHello">
 		<p>Hello</p>
 		<h1>I'm Konstantinas Ovčinikovas</h1>
-	</div>
+	</section>
 	
-	<img src="img/ProfilePhoto.jpg" width="300px" alt="">
+	
+
 	<!-- About -->
-	<h1 class="about-title">About me</h1>
-	<div class="about">
+	<section id="idAbout" class="appear-object">
+		<h1 class="about-title">About me</h1>
+
+		<div class="about">
+		
+			<div class="Photo"></div>
+			
+			<h3 class="subtitle">Hello I'm Konstantinas</h3>
+			<p class="text">Text about meText about meText about meText about meText about meText about meText about meText about meText about meText about me</p>
+			
+			<div class="number">
+				<strong>Call me: </strong><br>
+				<span onclick="copyTextToClipboard('+37060140209')">+37060140209</span>
+			</div>
+
+			<div class="email">
+				<strong>Email: </strong><br>
+				<span class="copyText"	onclick="copyTextToClipboard('konstantinas.ovcinikovas@stud.vilniustech.lt', this)">konstantinas.ovcinikovas@stud.vilniustech.lt</span>
+			</div>
+
+			<div class="socials">
+				<h3>Contact me</h3>
+				<a href="https://www.facebook.com/OvcinikovasKonstantinas" class="fa fa-facebook"></a>
+				<a href="https://www.linkedin.com/in/konstantinas-ovčinikovas-75a36b281/" class="fa fa-linkedin"></a>
+			</div>	
+
+		</div>
+	</section>
 	
-		<div class="Photo"></div>
-		
-
-		
-		<h3 class="title">Hello I'm Konstantinas</h3>
-		<p class="text">Text about meText about meText about meText about meText about meText about meText about meText about meText about meText about me</p>
-		
-		<div class="number">
-			<strong>Call me: </strong><br>
-			<span onclick="copyTextToClipboard('+37060140209')">+37060140209</span>
-		</div>
-
-		<div class="email">
-			<strong>Email: </strong><br>
-			<span onclick="copyTextToClipboard('konstantinas.ovcinikovas@stud.vilniustech.lt')">konstantinas.ovcinikovas@stud.vilniustech.lt</span>
-		</div>
-
-		<div class="socials">
-			<h3>Contact me</h3>
-			<a href="https://www.facebook.com/OvcinikovasKonstantinas" class="fa fa-facebook"></a>
-			<a href="https://www.linkedin.com/in/konstantinas-ovčinikovas-75a36b281/" class="fa fa-linkedin"></a>
-		</div>	
-
-	</div>
 
 	
 
 	<!-- Portfolio -->
-	<h1 class="Projects">My Projects</h1>
-	<div class="Portfolio2">
+	<section id="idProjects">
+		<h1 class="projects-title appear-object" id="idProjectsTitle">My Projects</h1>
 
-		
-		<h2 class="Name"><a>Project name</a></h2>
-		<p>Project textProject textProject textProject textProject textProject textProject textProject text</p>
-		<a class="View" href="https://github.com/cruetto/Folio">View Project</a>
-		<div class="Photo"></div>
-	</div>
-	<div class="Portfolio">
+		<div class="Portfolio2 appear-object" id="idPortfolio1">
 
-		<div class="Photo"></div>
-		<h2 class="Name"><a>Project name</a></h2>
-		<p>Project textProject textProject textProject textProject textProject textProject textProject text</p>
-		<a class="View" href="https://github.com/cruetto/Folio">View Project</a>
-		
-	</div>
-	
-			
-</body>
+			<h2 class="Name"><a>Project name</a></h2>
+			<p>Project textProject textProject textProject textProject textProject textProject textProject text</p>
+			<a class="ViewProject" href="https://github.com/cruetto/Folio">View Project</a>
+			<div class="Photo"></div>
+		</div>
 
-<footer>
-	
+		<div class="Portfolio appear-object" id="idPortfolio2">
+
+			<div class="Photo"></div>
+			<h2 class="Name"><a>Project name</a></h2>
+			<p>Project textProject textProject textProject textProject textProject textProject textProject text</p>
+			<a class="ViewProject" href="https://github.com/cruetto/Folio">View Project</a>
+		</div>
+
+	</section>
 
 
 
-
-
-
-
-
-	<div class="Contact">
+<footer><!-- Contacts -->
+	<div class="Contact appear-object" id="idContacts">
 		<div class="socials">
 			<h3>Contact me</h3>
-			<span onclick="copyTextToClipboard('konstantinas.ovcinikovas@stud.vilniustech.lt')">konstantinas.ovcinikovas@stud.vilniustech.lt</span><br>
+			<span class="copyText" onclick="copyTextToClipboard('konstantinas.ovcinikovas@stud.vilniustech.lt', this)">konstantinas.ovcinikovas@stud.vilniustech.lt</span><br>
 			<a href="https://www.facebook.com/OvcinikovasKonstantinas" class="fa fa-facebook"></a>
 			<a href="https://www.linkedin.com/in/konstantinas-ovčinikovas-75a36b281/" class="fa fa-linkedin"></a>
 		</div>
 		
 	</div>
-
-
-
-
 </footer>
+
+
+<p class="copied" id="idCopied">Copied to clipboard</p>
+
+</body>
 </html>
 
+<script src="main.js"></script>
