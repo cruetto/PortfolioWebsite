@@ -41,19 +41,19 @@
 
 		<div class="about">
 		
-			<div class="Photo"></div>
+			<div class="Photo" id="Check"></div>
 			
 			<h3 class="subtitle">Hello I'm Konstantinas</h3>
 			<p class="text">Text about meText about meText about meText about meText about meText about meText about meText about meText about meText about me</p>
 			
 			<div class="number">
 				<strong>Call me: </strong><br>
-				<span onclick="copyTextToClipboard('+37060140209')">+37060140209</span>
+				<span onclick="copyTextToClipboard('+37060140209', 'Number')">+37060140209</span>
 			</div>
 
 			<div class="email">
 				<strong>Email: </strong><br>
-				<span class="copyText"	onclick="copyTextToClipboard('konstantinas.ovcinikovas@stud.vilniustech.lt', this)">konstantinas.ovcinikovas@stud.vilniustech.lt</span>
+				<span onclick="copyTextToClipboard('konstantinas.ovcinikovas@stud.vilniustech.lt', 'Email')">konstantinas.ovcinikovas@stud.vilniustech.lt</span>
 			</div>
 
 			<div class="socials">
@@ -96,7 +96,7 @@
 	<div class="Contact appear-object" id="idContacts">
 		<div class="socials">
 			<h3>Contact me</h3>
-			<span class="copyText" onclick="copyTextToClipboard('konstantinas.ovcinikovas@stud.vilniustech.lt', this)">konstantinas.ovcinikovas@stud.vilniustech.lt</span><br>
+			<span class="copyText" onclick="copyTextToClipboard('konstantinas.ovcinikovas@stud.vilniustech.lt', 'Email')">konstantinas.ovcinikovas@stud.vilniustech.lt</span><br>
 			<a href="https://www.facebook.com/OvcinikovasKonstantinas" class="fa fa-facebook"></a>
 			<a href="https://www.linkedin.com/in/konstantinas-ovčinikovas-75a36b281/" class="fa fa-linkedin"></a>
 		</div>
@@ -105,7 +105,7 @@
 </footer>
 
 
-<p class="copied" id="idCopied">Copied to clipboard</p>
+<p class="copyText" id="idCopied"></p>
 
 </body>
 </html>

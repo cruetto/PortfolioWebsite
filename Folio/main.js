@@ -1,25 +1,23 @@
 ///-------- Copy to clipboard--------
-function copyTextToClipboard(textToCopy, thisdocument) {
+function copyTextToClipboard(textToCopy, nameOfObject) {
 	try {
 		
-		console.log(thisdocument.className);
+		// console.log(thisObject.className);
 
 		if (navigator?.clipboard?.writeText) {
-		navigator.clipboard.writeText(textToCopy);
+			navigator.clipboard.writeText(textToCopy);
 
-		//Animation
-		console.log("Copied");
-
-		thisdocument.classList.add('copied-enable-animation');
+			console.log("Copied");
+			alert(nameOfObject + " was copied to clipboard");
 		}
 	} 
 	catch (err) {
 		console.error(err);
 	}
 
-	thisdocument.addEventListener("animationend", () => {
-		thisdocument.classList.remove('copied-enable-animation');
-	});
+	// thisObject.addEventListener("animationend", () => {
+	// 	thisObject.classList.remove('copied-enable-animation');
+	// });
 }
 
 
@@ -33,7 +31,6 @@ function fadeOutOnScroll(element) {
 		return;
 	}
 	
-  	var distanceToBottom = window.scrollY;
 	var distanceToTop = window.scrollY + element.getBoundingClientRect().top;
 	var elementHeight = element.offsetHeight;
 	var scrollTop = document.documentElement.scrollTop;
@@ -59,14 +56,52 @@ function fadeOutOnScroll(element) {
 	}
   
 }
+
+
+
+// Move Photos while scrolling
+function FindBetween(minNumber, maxNumber, number)
+{
+	if(number>maxNumber){
+		return maxNumber;
+	}
+	else if(number<minNumber)
+	{
+		return minNumber
+	}
+	return number;
+}
+function MovePhotosOnScroll(element) {
+
+	if (!element) {
+    	console.log("Return");
+		return;
+	}
+	
+	var distanceToTop = window.scrollY + element.getBoundingClientRect().top;
+	var scrollTop = document.documentElement.scrollTop;
+	
+	var translate = (distanceToTop - scrollTop) * 0.3 - 110;
+	
+	translate = FindBetween(-100, 100, translate);
+	element.style.transform = "translate(0px, " + translate + "px)";
+
+	// console.log("Translate: " + translate);
+	// console.log("ScrollTop: " + scrollTop);
+	// console.log("DistanceToTop: " + distanceToTop);
+}
+
+
+const photosToMove = document.querySelectorAll('.Photo');
+
 var sectionAbout = document.getElementById('idAbout');
 var sectionProjectTitle = document.getElementById('idProjectsTitle');
 var sectionProject1 = document.getElementById('idPortfolio1');
 var sectionProject2 = document.getElementById('idPortfolio2');
 
-
 function scrollHandler() {
-
+	photosToMove.forEach((element) => MovePhotosOnScroll(element));
+	
 	fadeOutOnScroll(sectionAbout);
 	fadeOutOnScroll(sectionProjectTitle);
 	fadeOutOnScroll(sectionProject1);
@@ -74,10 +109,10 @@ function scrollHandler() {
 
 }
 
-//window.addEventListener('scroll', scrollHandler);
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", function() {
   scrollHandler();
 }, false);
+
 
 
 
@@ -89,7 +124,7 @@ const className = "appear-transition";
 
 // Animation will be applied to each element with this class
 const elemsToAdd = document.querySelectorAll('.appear-object');
-;
+
 
 
 const observer = new IntersectionObserver(entries => {
