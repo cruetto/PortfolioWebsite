@@ -1,3 +1,4 @@
+/* Created by Konstantinas Ovcinikovas */
 /* 
 Copy on email messagebox (Maybe Later)
 Animation for photos (Done)
@@ -32,8 +33,6 @@ body {
 html, body {
     max-width: 100%;
     overflow-x: hidden;
-	max-height: 100%;
-    overflow-x: hidden;
 }
 
 p{
@@ -67,6 +66,10 @@ p{
 	border-color: var(--background-border-color);
 }
 
+.linkAnchor{
+	margin-bottom: 5%;
+	opacity: 0;
+}
 
 /*-------------------NavBar-start-------------------*/
 .header{
@@ -159,8 +162,10 @@ p{
 .about-title
 {
 	text-align: center;
-	margin-top: 300px;
+	margin-top: 0px;
 	margin-bottom: 100px;
+	font-weight: bold;
+	font-size: 40px;
 }
 
 .about{
@@ -170,6 +175,7 @@ p{
 
 	margin-left: 15%;
 	margin-right: 15%;
+	margin-bottom: 20%;
 }
 
 .about span{
@@ -254,7 +260,6 @@ p{
 /* General */
 .projects-title{
 	text-align: center;
-	margin-top: 300px;
 	margin-bottom: 100px;
 }
 
@@ -377,7 +382,7 @@ p{
 /*-------------------Footer-start-------------------*/
 .Contact{
 	text-align: center;
-	margin-bottom: 100px;
+	margin-bottom: 200px;
 }
 
 .Contact .copyText{
@@ -424,8 +429,6 @@ p{
 
 
 /*-------------------Appear-start-------------------*/
-
-
 .appear-object{
 
 	opacity: 0;
@@ -443,7 +446,11 @@ p{
     transform: none;
 }
 /*-------------------Appear-end-------------------*/
+<<<<<<< HEAD
 
 /* .Photo{
 	translate: 0px 150px;
 } */
+=======
+/* Created by Konstantinas Ovcinikovas */
+>>>>>>> 2798b7a (Completed link, added photo of myself)

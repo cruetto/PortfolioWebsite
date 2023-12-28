@@ -18,9 +18,9 @@
 	<header class="header">
 		<div class="navbar">
 			
-			<a href="#idAbout">About</a>
-			<a href="#idProjects">Projects</a>
-			<a href="#idContacts">Contacts</a>
+			<a href="#linkAbout">About</a>
+			<a href="#linkProjects">Projects</a>
+			<a href="#linkContacts">Contacts</a>
 		</div>
 	</header>	
 		
@@ -36,15 +36,24 @@
 	
 
 	<!-- About -->
+
+	<div class="linkAnchor" id="linkAbout">LinkAbout</div>
 	<section id="idAbout" class="appear-object">
-		<h1 class="about-title">About me</h1>
+		<h1 id="titlelink" class="about-title">About me</h1>
 
 		<div class="about">
 		
 			<div class="Photo" id="Check"></div>
 			
 			<h3 class="subtitle">Hello I'm Konstantinas</h3>
-			<p class="text">Text about meText about meText about meText about meText about meText about meText about meText about meText about meText about me</p>
+			<p class="text">
+				I am still studying at VilniusTech AI systems(Dirbtinio intelekto sistemos). Now my second year.
+				Took course of Back-end developer in NKKM (3years). Gained basic programming knowledge of C++, created programs with Visual Studio on C#, MySQL, VisualBasic. And made some games with Unity and "Gamemaker".
+				Played with arduino. And even have some projects.
+				Also created this website by myself and learned how to use HTML, MySQL and javascript
+				
+			   I am looking for my first part-time job. I cannot say with 100% confidence where I see myself in five years or what my big career goal is. The world is changing rapidly, and I don’t have enough professional experience to be certain about such things. However, I know that I can provide a fresh take and an extraordinary approach to every project. I am always open to challenges and constructive feedback. I am open-minded and learn new things quickly. I want to become a team player and dedicate all my skills and talents to develop high-quality and unique products.
+			</p>
 			
 			<div class="number">
 				<strong>Call me: </strong><br>
@@ -69,6 +78,7 @@
 	
 
 	<!-- Portfolio -->
+	<div class="linkAnchor" id="linkProjects">LinkProjects</div>
 	<section id="idProjects">
 		<h1 class="projects-title appear-object" id="idProjectsTitle">My Projects</h1>
 
@@ -92,11 +102,15 @@
 
 
 
-<footer><!-- Contacts -->
+	
+<footer>
+	<!-- Contacts -->
+	<div class="linkAnchor" id="linkContacts">LinkContacts</div>
 	<div class="Contact appear-object" id="idContacts">
 		<div class="socials">
 			<h3>Contact me</h3>
 			<span class="copyText" onclick="copyTextToClipboard('konstantinas.ovcinikovas@stud.vilniustech.lt', 'Email')">konstantinas.ovcinikovas@stud.vilniustech.lt</span><br>
+			
 			<a href="https://www.facebook.com/OvcinikovasKonstantinas" class="fa fa-facebook"></a>
 			<a href="https://www.linkedin.com/in/konstantinas-ovčinikovas-75a36b281/" class="fa fa-linkedin"></a>
 		</div>
@@ -104,10 +118,10 @@
 	</div>
 </footer>
 
-
-<p class="copyText" id="idCopied"></p>
-
 </body>
 </html>
 
+<!-- Add JS after to let html load itself -->
 <script src="main.js"></script>
+
+<!-- Created by Konstantinas Ovcinikovas -->
