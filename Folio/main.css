@@ -1,13 +1,53 @@
-/* Copy on email messagebox
+/* 
+Copy on email messagebox
 Animation for photos 
-Media*/
+Media
 
-/* *{
-	border: solid 1px;
-} */
+*/
+
+*{
+	margin: 0;
+	padding: 0;
+	/* border: solid 1px;  */
+}
+
+:root {
+	--first-color: #008f00;
+	--second-color: white;
+	--background-color: #101010;
+	--background-border-color:#272727;
+}
+
+/* Background squares */
+#box1{
+	position: fixed;
+	right: -5%;
+	bottom: 0%;
+	z-index: -100;
+
+	width: 600px;
+	height: 600px;
+	transform: rotate(37deg);
+
+	border: ridge 1px;
+	border-color: var(--background-border-color);
+}	
+#box2{
+	position: fixed;
+	top: 10%;
+	z-index: -100;
+	
+	width: 400px;
+	height: 400px;
+	
+	transform: translate(-0px) rotate(15deg);
+	border: groove 1px;
+	border-color: var(--background-border-color);
+}
+
 
 body {
-	font-family: Courier; 
+	font-family: Courier,Arial; 
 	font-size: 25px; 
 	color: #ffffff;
 	
@@ -30,31 +70,58 @@ p{
 	position: fixed;
 	top: 0;
 	width: 100%;
-	padding: 20px 100px;
-	background: seagreen;
-	display: flex;
-	
-	align-items: center;
+	padding: 10px;
+	background: #131313; 
+	display: block;
+	justify-content: space-between;
+	text-align: right;
 	z-index: 100;
+
+	box-shadow: 0 1px 20px #191919;
 }
 
+
+.navbar{
+	margin-right: 10%;
+}
 .navbar a{
+	
+	position: relative;
 	font-size: 18px;
-	color: #fff;
+	color: var(--first-color);
 	font-weight: 500;
 	text-decoration: none;
+	margin-left: 20px;
+}
+.navbar a:hover{
+	color: white;
+	transition-property: all;
+	transition-duration: .3s;
+	transition-timing-function: ease-in-out;
 }
 
 .navbar a::before{
 	content: '';
 	position: absolute;
-	top: 0;
+	top: 100%;
 	left: 0;
-	width: 100%;
+	width: 0;
 	height: 2px;
-	background: fff;
+	background: var(--first-color);
 }
+.navbar a:hover::before{
+	width: 100%;
+	background: white;
+	transition-property: all;
+	transition-duration: .3s;
+	transition-timing-function: ease-in-out;
+}
+
+
 /*-------------------NavBar-end-------------------*/
+
+
+
 
 
 /*-------------------Hello-start-------------------*/
@@ -68,13 +135,26 @@ p{
 .hello p{
 	font-size: 35px;
 }
+.hello h1{
+	font-size: 50px;
+}
+@keyframes appear{
+	from{
+		opacity: 0;
+		transform: scale(1.4);
+	}
+	to{	
+		opacity: 1;
+		transform: none;
+	}
+}
 /*-------------------Hello-end-------------------*/
 
 
 
+
+
 /*-------------------About-start-------------------*/
-
-
 .about-title
 {
 	text-align: center;
@@ -113,10 +193,6 @@ p{
 	background: url(img/ProfilePhoto.jpg) no-repeat;
 	background-position: 20%;
 	background-size: 300px;
-	
-
-
-   
 }
 
 .about .subtitle{
@@ -230,7 +306,7 @@ p{
 
 	width: 300px;
 	height: 400px;
-
+	
 	background: url(img/ProfilePhoto.jpg) right no-repeat;
 	background-size: contain;
 }
@@ -322,26 +398,33 @@ p{
 
 
 /*-------------------Copied-start-------------------*/
-.copied{
+.copyText::after{
+	position: relative;
+	bottom: 100%;
+	content: "copied";
+}
+
+
+ /* .copied{
 	font-family: Courier; 
-	position: fixed;
+	position: relative;
 	width: auto;
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: bold;
 	height: 30px;
 	font-style: italic;
 
-	/* border: 3px solid #147d43; */
-	color: #131313;
+
+	color: var(--);
 	bottom: 10%;
 	left: 50%;
 	transform: translate(-50%);
 	z-index: 100;
 
-	opacity: 1;
-}
+	opacity: 0;
+} */
 
-.copied::before{
+ /* .copied::before{
 	z-index: -1;
 	content: '';
 	position: absolute;
@@ -350,18 +433,17 @@ p{
 	transform: translate(-25%, -25%);
 	width: 200%;
 	height: 60px;
-	background: white;
+	background: var(--background-border-color);
 	border-radius: 25px;
-	box-shadow: 0 1px 5px white;
-}
+	box-shadow: 0 1px 5px var(--background-border-color);
+}  */
+
 @keyframes appear-disappear{
 	from{
 		opacity: 1;
-		transform: scale(1.4);
 	}
 	to{	
 		opacity: 0;
-		transform: none;
 	}
 }
 
@@ -385,10 +467,10 @@ p{
   .appear-object {
     transition: opacity 0.2s linear, transform 0.5s ease;
   }
-  }
-  
+}
+
 .appear-transition {
-	opacity: 1;
+    opacity: 1;
     transform: none;
-  }
+}
 /*-------------------Appear-end-------------------*/
