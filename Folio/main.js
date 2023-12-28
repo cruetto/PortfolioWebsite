@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-async function copyTextToClipboard(textToCopy) {
-    try {
-      if (navigator?.clipboard?.writeText) {
-        await navigator.clipboard.writeText(textToCopy);
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
-=======
 ///-------- Copy to clipboard--------
 function copyTextToClipboard(textToCopy, thisdocument) {
 	try {
@@ -117,4 +105,3 @@ const observer = new IntersectionObserver(entries => {
 
 
 elemsToAdd.forEach((element) => observer.observe(element));
->>>>>>> b064a96 (Made some work with "Copied" Messagebox)
