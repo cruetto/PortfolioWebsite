@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	
+	<title>My Portfolio</title>
+</head>
+
+<!-- background -->
+<div id="box1"></div>
+<div id="box2"></div>
+
+<body>
+	<div id="preloader"></div>
+
+	<header class="header">
+		<div class="navbar">
+			
+			<a href="#linkAbout">About</a>
+			<a href="#linkProjects">Projects</a>
+			<a href="#linkContacts">Contacts</a>
+		</div>
+	</header>	
+		
+	
+	
+
+	<!-- Hello -->
+	<section class="hello" id="idHello">
+		<p>Hello</p>
+		<h1>I'm Konstantinas Ovčinikovas</h1>
+	</section>
+	
+	
+
+	<!-- About -->
+
+	<div class="linkAnchor" id="linkAbout">LinkAbout</div>
+	<section id="idAbout" class="appear-object">
+		<h1 id="titlelink" class="about-title">About me</h1>
+
+		<div class="about">
+		
+			<div class="Photo" id="Check"></div>
+			
+			<h3 class="subtitle">Hello I'm Konstantinas</h3>
+			<p class="text">
+				I am still studying at VilniusTech AI systems(Dirbtinio intelekto sistemos). Now my second year.
+				Took course of Back-end developer in NKKM (3years). Gained basic programming knowledge of C++, created programs with Visual Studio on C#, MySQL, VisualBasic. And made some games with Unity and "Gamemaker".
+				</p>
+			
+			
+
+			<div class="socials">
+				<h3>Contact me</h3>
+				<a href="https://www.facebook.com/OvcinikovasKonstantinas" class="fa fa-facebook"></a>
+				<a href="https://www.linkedin.com/in/konstantinas-ovčinikovas-75a36b281/" class="fa fa-linkedin"></a>
+			</div>	
+
+		</div>
+	</section>
+	
+
+	
+
+	<!-- Portfolio -->
+	<div class="linkAnchor" id="linkProjects">LinkProjects</div>
+	<section id="idProjects">
+		<h1 class="projects-title appear-object" id="idProjectsTitle">My Projects</h1>
+
+		<!-- Project 1 -->
+		<div class="Portfolio2 appear-object" id="idProject1">
+
+			<h2 class="Name"><a>C++ Vehicle Storage</a></h2>
+			<p>Project textProject textProject textProject textProject textProject textProject textProject text</p>
+			<a class="ViewProject" href="https://github.com/cruetto/Folio">View Project</a>
+			<img class="Photo" src="img/Projects/C++_VehicleStorage.gif" alt="Image not loaded">
+		</div>
+
+		<!-- Project 2 -->
+		<div class="Portfolio appear-object" id="idProject2">
+
+			<img class="Photo" src="img/Projects/Gamemaker_Pacman.gif" alt="Image not loaded">
+			<h2 class="Name"><a>Pacman using Gamemaker</a></h2>
+			<p>Project textProject textProject textProject textProject textProject textProject textProject text</p>
+			<a class="ViewProject" href="https://github.com/cruetto/Folio">View Project</a>
+		</div>
+
+		<!-- Project 3 -->
+		<div class="Portfolio2 appear-object" id="idProject3">
+
+			<h2 class="Name"><a>Tracking app with Glide</a></h2>
+			<p>Project textProject textProject textProject textProject textProject textProject textProject text</p>
+			<a class="ViewProject" href="https://github.com/cruetto/Folio">View Project</a>
+			<img class="Photo" src="img/Projects/Glide_Trackeo.gif" alt="Image not loaded">
+		</div>
+
+		<!-- Project 4 -->
+		<div class="Portfolio appear-object" id="idProject4">
+
+			<img class="Photo" src="img/Projects/Matlab_Recognition.png" alt="Image not loaded">
+			<h2 class="Name"><a>Matlab Object recognition</a></h2>
+			<p>Project textProject textProject textProject textProject textProject textProject textProject text</p>
+			<a class="ViewProject" href="https://github.com/cruetto/Folio">View Project</a>
+		</div>
+
+		<!-- Project 5 -->
+		<div class="Portfolio2 appear-object" id="idProject5">
+
+			<h2 class="Name"><a>Automatic cat feeder</a></h2>
+			<p>Project textProject textProject textProject textProject textProject textProject textProject text</p>
+			<a class="ViewProject" href="https://github.com/cruetto/Folio">View Project</a>
+			<img class="Photo" src="img/Projects/CatFeeder.png" alt="Image not loaded">
+		</div>
+	</section>
+
+
+
+	
+<footer>
+	<!-- Contacts -->
+	<div class="linkAnchor" id="linkContacts">LinkContacts</div>
+	<div class="Contact appear-object" id="idContacts">
+		<div class="socials">
+			<h3>Contact Information</h3>
+			
+			<p>Click to Copy</p>
+			<span onclick="copyTextToClipboard('konstantinas.ovcinikovas@stud.vilniustech.lt', 'Email')">konstantinas.ovcinikovas@stud.vilniustech.lt</span>
+			<span onclick="copyTextToClipboard('+37060140209', 'Number')">+37060140209</span>
+			
+			<a href="https://www.facebook.com/OvcinikovasKonstantinas" class="fa fa-facebook"></a>
+			<a href="https://www.linkedin.com/in/konstantinas-ovčinikovas-75a36b281/" class="fa fa-linkedin"></a>
+		</div>
+		
+	</div>
+</footer>
+
+
+
+<script>
+
+var loader = document.getElementById("preloader")
+window.addEventListener("load", function(){
+	loader.style.display = "none";
+})
+
+</script>
+
+</body>
+</html>
+
+<!-- Add JS after to let html load itself -->
+<script src="main.js"></script>
+
+<!-- Created by Konstantinas Ovcinikovas -->
