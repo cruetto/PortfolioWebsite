@@ -93,9 +93,9 @@ p{
 .navbar a{
 	
 	position: relative;
-	font-size: 18px;
+	font-size: 19px;
 	color: var(--first-color);
-	font-weight: 500;
+	font-weight: 550;
 	text-decoration: none;
 	margin-left: 20px;
 }
@@ -364,28 +364,61 @@ p{
 	width: 30vw;
 	height: auto;
 }
+#idProject1 .Photo:hover{
+	position: relative;
+	scale: 1.5;
+	position: center;
+	transition: 1s ease-in;
+	z-index: 900;
+}
 
 #idProject2 .Photo{
 	width: 30vw;
 	height: auto;
+}
+#idProject2 .Photo:hover{
+	position: relative;
+	scale: 1.2;
+	position: center;
+	transition: 1s ease-in;
+	z-index: 900;
 }
 
 #idProject3 .Photo{
 	width: 30vw;
 	height: auto;
 }
+#idProject3 .Photo:hover{
+	position: relative;
+	scale: 1.9;
+	position: center;
+	transition: 1s ease-in;
+	z-index: 900;
+}
 
 #idProject4 .Photo{
 	width: 30vw;
 	height: auto;
+}
+#idProject4 .Photo:hover{
+	position: relative;
+	scale: 1.1;
+	position: center;
+	transition: 1s ease-in;
+	z-index: 900;
 }
 
 #idProject5 .Photo{
 	width: auto;
 	height: 50vh;
 }
-
-
+#idProject5 .Photo:hover{
+	position: relative;
+	scale: 1.2;
+	position: center;
+	transition: 1s ease-in;
+	z-index: 900;
+}
 
 /*-------------------Portfolio-Projects-end-------------------*/
 
