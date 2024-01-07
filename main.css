@@ -37,6 +37,8 @@ html, body {
 
 p{
 	color: #b6b8b9;
+	/* padding-top: 30px; 
+	padding-bottom: 30px;  */
 }
 
 /* Background squares */
@@ -276,15 +278,21 @@ p{
 	transition-timing-function: ease-in-out;
 }
 
+#idProjects p{
+	padding-top: 30px; 
+	padding-bottom: 30px; 
+}
+
 .Portfolio {
 	display:grid;
-	grid-template-columns: 1fr 1fr 10fr;
-	grid-template-rows: 1fr 5fr 1fr;
+	
+	grid-template-columns: auto 30px auto; 
 
 	margin-left: 15%;
 	margin-right: 15%;
 	margin-bottom: 300px;
 }
+
 
 /* Portfolio */
 .Portfolio .Photo {
@@ -301,15 +309,15 @@ p{
 	background-size: contain;
 }
 .Portfolio .Name{
-	grid-column: 3 / 4;
+	grid-column: 4 / 5;
 	grid-row: 1 / 2;
 }
 .Portfolio p{
-	grid-column: 3 / 4;
+	grid-column: 4 / 5;
 	grid-row: 2/ 3;
 }
 .Portfolio .ViewProject{
-	grid-column: 3 / 4;
+	grid-column: 4 / 5;
 	grid-row: 3 / 4;
 }
 /*-------------------Portfolio-end-------------------*/
@@ -321,7 +329,7 @@ p{
 
 	display:grid;
 	
-	
+	grid-template-columns: auto 30px auto; 
 
 	margin-left: 15%;
 	margin-right: 15%;
@@ -330,7 +338,7 @@ p{
 
 .Portfolio2 .Photo {
 	
-	grid-column: 2 / 3;
+	grid-column: 3 / 4;
 	grid-row: 1 / 4;
 	
 
@@ -359,7 +367,9 @@ p{
 
 
 /*-------------------Portfolio-Projects-start-------------------*/
-
+#idProject1{
+	grid-template-rows: 44px 5fr 26px; 
+}
 #idProject1 .Photo{
 	width: 30vw;
 	height: auto;
@@ -372,6 +382,11 @@ p{
 	z-index: 900;
 }
 
+
+
+#idProject2{
+	grid-template-rows: 44px 5fr 26px; 
+}
 #idProject2 .Photo{
 	width: 30vw;
 	height: auto;
@@ -384,6 +399,11 @@ p{
 	z-index: 900;
 }
 
+
+
+#idProject3{
+	grid-template-rows: 44px 5fr 26px; 
+}
 #idProject3 .Photo{
 	width: 30vw;
 	height: auto;
@@ -396,18 +416,29 @@ p{
 	z-index: 900;
 }
 
+
+
+#idProject4{
+	grid-template-rows: 44px 5fr 26px; 
+}
 #idProject4 .Photo{
 	width: 30vw;
 	height: auto;
 }
 #idProject4 .Photo:hover{
 	position: relative;
-	scale: 1.1;
+	scale: 1.9;
 	position: center;
 	transition: 1s ease-in;
 	z-index: 900;
 }
 
+
+
+#idProject5{
+	/* grid-template-columns: 5fr 1fr; */
+	grid-template-rows: 44px 1fr 26px; 
+}
 #idProject5 .Photo{
 	width: auto;
 	height: 50vh;
@@ -420,6 +451,20 @@ p{
 	z-index: 900;
 }
 
+#idProject6{
+	grid-template-rows: 44px auto 26px; 
+}
+#idProject6 .Photo{
+	width: 30vw;
+	height: auto;
+}
+#idProject6 .Photo:hover{
+	position: relative;
+	scale: 1.1;
+	position: center;
+	transition: 1s ease-in;
+	z-index: 900;
+}
 /*-------------------Portfolio-Projects-end-------------------*/
 
 

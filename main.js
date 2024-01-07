@@ -81,9 +81,10 @@ function MovePhotosOnScroll(element) {
 	var distanceToTop = window.scrollY + element.getBoundingClientRect().top;
 	var scrollTop = document.documentElement.scrollTop;
 	
-	var translate = (distanceToTop - scrollTop) * 0.3 - 110;
+	var translate = (distanceToTop - scrollTop) * 0.4 - 100;
 	
-	translate = FindBetween(-100, 100, translate);
+	var borderOfMoving = 200; // In pixels
+	translate = FindBetween(-borderOfMoving, borderOfMoving, translate);
 	element.style.transform = "translate(0px, " + translate + "px)";
 
 	// console.log("Translate: " + translate);
