@@ -73,6 +73,15 @@ p{
 	opacity: 0;
 }
 
+.hiperlink{
+	text-decoration: none;
+	color: var(--first-color);
+}
+
+
+
+
+
 /*-------------------NavBar-start-------------------*/
 .header{
 	position: fixed;
@@ -282,6 +291,8 @@ p{
 	padding-top: 30px; 
 	padding-bottom: 30px; 
 }
+
+
 
 .Portfolio {
 	display:grid;
