@@ -21,6 +21,18 @@ function copyTextToClipboard(textToCopy, nameOfObject) {
 }
 
 
+function ZoomImage(image, scaleCoef) {
+	console.log(image.className);
+	try {
+		// image.style.transform = "scale(" + scaleCoef + ")";
+		image.classList.add("zoomed");
+	} 
+	catch (err) {
+		console.error(err);
+	}
+}
+
+
 
 
 /// -------Fading while scrolling--------

@@ -294,6 +294,34 @@ p{
 
 
 
+input[type=checkbox]{
+	visibility: hidden;
+	
+}
+input[type=checkbox]#zoom_img1:checked ~ label > img{
+	transform: none;
+	
+	cursor: zoom-in;
+	position: relative;
+	transform: scale(2.4) translate(-30%)!important;
+	z-index: 900;
+
+	box-shadow: 0 0 500px 90px #101010;
+	transition: 1s;
+}
+
+input[type=checkbox]#zoom_img2:checked ~ label > img{
+	transform: none;
+	
+	cursor: zoom-in;
+	position: relative;
+	transform: scale(2.4) translate(-30%)!important;
+	z-index: 900;
+
+	box-shadow: 0 0 500px 90px #101010;
+	transition: 1s;
+}
+
 .Portfolio {
 	display:grid;
 	
@@ -311,13 +339,9 @@ p{
 	grid-column: 1 / 2;
 	grid-row: 1 / 4;
 
-	/* width: 300px;
-	height: 400px; */
-	
-	/* background: url(img/ProfilePhoto.jpg) right no-repeat; */
-	background-position: right;
+	/* background-position: right;
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: contain; */
 }
 .Portfolio .Name{
 	grid-column: 4 / 5;
@@ -352,11 +376,9 @@ p{
 	grid-column: 3 / 4;
 	grid-row: 1 / 4;
 	
-
-	/* background-image: url(img/ProfilePhoto.jpg); */
-	background-position: right;
+	/* background-position: right;
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: contain; */
 }
 .Portfolio2 .Name{
 	grid-column: 1 / 2;
@@ -385,13 +407,16 @@ p{
 	width: 30vw;
 	height: auto;
 }
-#idProject1 .Photo:hover{
+/* #idProject1 .Photo:hover{
 	position: relative;
 	scale: 1.5;
-	position: center;
+
+	right:50%;
+  	transform: translateX(-50%);
+
 	transition: 1s ease-in;
 	z-index: 900;
-}
+} */
 
 
 
@@ -402,13 +427,13 @@ p{
 	width: 30vw;
 	height: auto;
 }
-#idProject2 .Photo:hover{
+/* #idProject2 .Photo:hover{
 	position: relative;
 	scale: 1.2;
 	position: center;
 	transition: 1s ease-in;
 	z-index: 900;
-}
+} */
 
 
 
@@ -419,13 +444,13 @@ p{
 	width: 30vw;
 	height: auto;
 }
-#idProject3 .Photo:hover{
+/* #idProject3 .Photo:hover{
 	position: relative;
 	scale: 1.9;
 	position: center;
 	transition: 1s ease-in;
 	z-index: 900;
-}
+} */
 
 
 
@@ -436,13 +461,13 @@ p{
 	width: 30vw;
 	height: auto;
 }
-#idProject4 .Photo:hover{
+/* #idProject4 .Photo:hover{
 	position: relative;
 	scale: 1.9;
 	position: center;
 	transition: 1s ease-in;
 	z-index: 900;
-}
+} */
 
 
 
@@ -454,13 +479,13 @@ p{
 	width: auto;
 	height: 50vh;
 }
-#idProject5 .Photo:hover{
+/* #idProject5 .Photo:hover{
 	position: relative;
 	scale: 1.2;
 	position: center;
 	transition: 1s ease-in;
 	z-index: 900;
-}
+} */
 
 #idProject6{
 	grid-template-rows: 44px auto 26px; 
@@ -469,13 +494,13 @@ p{
 	width: 30vw;
 	height: auto;
 }
-#idProject6 .Photo:hover{
+/* #idProject6 .Photo:hover{
 	position: relative;
 	scale: 1.1;
 	position: center;
 	transition: 1s ease-in;
 	z-index: 900;
-}
+} */
 /*-------------------Portfolio-Projects-end-------------------*/
 
 
