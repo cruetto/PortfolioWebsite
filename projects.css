@@ -153,7 +153,7 @@ input[type=checkbox]#zoom_img:checked ~ label > img{
 	grid-template-rows: 44px 5fr 26px; 
 }
 #idProject2 .Photo{
-	width: 30vw;
+	width: 300px;
 	height: auto;
 }
 
@@ -190,6 +190,7 @@ input[type=checkbox]#zoom_img:checked ~ label > img{
 }
 
 
+
 #idProject6{
 	grid-template-rows: 44px auto 26px; 
 }
@@ -197,5 +198,106 @@ input[type=checkbox]#zoom_img:checked ~ label > img{
 	width: 30vw;
 	height: auto;
 }
-
 /*-------------------Portfolio-Projects-end-------------------*/
+
+
+
+
+
+@media screen and (max-width: 950px){
+	.Portfolio, .Portfolio2 {
+		display:grid;
+		
+		grid-template-rows: auto auto auto auto; 
+	
+		margin-left: 5%;
+		margin-right: 5%;
+		margin-bottom: 40vh;
+	}
+	
+	
+	/* Portfolio */
+	.Portfolio, .Portfolio2 > .Photo {
+		grid-row: 1 / 2;
+	}
+	.Portfolio, .Portfolio2 > .Name{
+		grid-row: 2 / 3;
+	}
+	.Portfolio, .Portfolio2 > p{
+		grid-row: 3/ 4;
+	}
+	.Portfolio, .Portfolio2 > .ViewProject{
+		grid-row: 4 / 5;
+	}
+	/*-------------------Portfolio-end-------------------*/
+
+	#idProject1{
+		grid-template-rows: auto auto auto auto; 
+	}
+	#idProject1 .Photo{
+		width: 500px;
+		height: auto;
+	}
+	/* #idProject1 .Photo:hover{
+		position: relative;
+		scale: 1.5;
+	
+		right:50%;
+		  transform: translateX(-50%);
+	
+		transition: 1s ease-in;
+		z-index: 900;
+	} */
+	
+	
+	
+	#idProject2{
+		grid-template-rows: 44px 5fr 26px; 
+	}
+	#idProject2 .Photo{
+		width: 300px;
+		height: auto;
+	}
+	
+	
+	
+	
+	#idProject3{
+		grid-template-rows: 44px 5fr 26px; 
+	}
+	#idProject3 .Photo{
+		width: 30vw;
+		height: auto;
+	}
+	
+	
+	
+	#idProject4{
+		grid-template-rows: 44px 5fr 26px; 
+	}
+	#idProject4 .Photo{
+		width: 30vw;
+		height: auto;
+	}
+	
+	
+	
+	#idProject5{
+		/* grid-template-columns: 5fr 1fr; */
+		grid-template-rows: 44px 1fr 26px; 
+	}
+	#idProject5 .Photo{
+		width: auto;
+		height: 50vh;
+	}
+	
+	
+	
+	#idProject6{
+		grid-template-rows: 44px auto 26px; 
+	}
+	#idProject6 .Photo{
+		width: 30vw;
+		height: auto;
+	}
+}

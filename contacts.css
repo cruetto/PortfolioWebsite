@@ -21,6 +21,7 @@
 }
 
 .Contact span{
+	cursor: pointer;
 	display: block;
 	color:var(--first-color);
 	margin-bottom: 30px;

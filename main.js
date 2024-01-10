@@ -27,23 +27,23 @@ function copyTextToClipboard(textToCopy, nameOfObject) {
 ///--------Appear--------
  // Name of the class which will add transition
  const className = "appear-object";
+ const animationName = "appear-animation";
 
- const observer = new IntersectionObserver(entries => {
-	 entries.forEach(entry => {
-	   if (entry.isIntersecting) {
-		 entry.target.classList.add(className);
-		 return;
-	   }
-	    // To make "Appear animation" work every time
-	 	//entry.target.classList.remove(className);
-	 });
-   });
+const observer = new IntersectionObserver(entries => {
+	entries.forEach(entry => {
+		if (entry.isIntersecting) 
+		{
+			entry.target.classList.add(animationName);
+			return;
+		}
+	});
+});
    
 // Get multiple elements instead of a single one using "querySelectorAll"
 const elements = document.querySelectorAll('.' + className);
 
-// Delete animation to re-add it
-elements.forEach((element) => element.classList.remove(className));
+// // Delete animation to re-add it
+// elements.forEach((element) => element.classList.remove(className));
 
 // Observe element
 elements.forEach((element) => observer.observe(element));
@@ -124,37 +124,19 @@ function MovePhotosOnScroll(element) {
 
 const photosToMove = document.querySelectorAll('.Photo');
 
-var sectionAbout = document.getElementById('idAbout');
-var sectionProjectTitle = document.getElementById('idProjectsTitle');
-var sectionProject1 = document.getElementById('idProject1');
-var sectionProject2 = document.getElementById('idProject2');
-var sectionProject3 = document.getElementById('idProject3');
-var sectionProject4 = document.getElementById('idProject4');
-var sectionProject5 = document.getElementById('idProject5');
-var sectionProject6 = document.getElementById('idProject6');
+const elementsTofade = document.querySelectorAll('.fadeOutOnScroll');
+
 
 function scrollHandler() {
+	elementsTofade.forEach((element) => fadeOutOnScroll(element));
 	photosToMove.forEach((element) => MovePhotosOnScroll(element));
 	
-
-	fadeOutOnScroll(sectionAbout);
-	fadeOutOnScroll(sectionProjectTitle);
-	fadeOutOnScroll(sectionProject1);
-	fadeOutOnScroll(sectionProject2);
-	fadeOutOnScroll(sectionProject3);
-	fadeOutOnScroll(sectionProject4);
-	fadeOutOnScroll(sectionProject5);
-	fadeOutOnScroll(sectionProject6);
-
 }
 
 window.addEventListener("scroll", function() {
   scrollHandler();
 }, false);
 
-
-
-
-
-
-
+window.onbeforeunload = function () {
+	window.scrollTo(0, 0);
+  }
