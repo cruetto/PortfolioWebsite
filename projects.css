@@ -1,0 +1,201 @@
+/*-------------------Portfolio-start-------------------*/
+/* General */
+.projects-title{
+	text-align: center;
+	margin-bottom: 100px;
+}
+
+.ViewProject{
+	position: relative;
+	width: 181px;
+	height: 25px; 
+	font-size: 25px;
+	color: var(--first-color);
+	text-decoration: none;
+}
+.ViewProject:hover{
+	color: white;
+	transition-property: all;
+	transition-duration: .3s;
+	transition-timing-function: ease-in-out;
+}
+.ViewProject::before{
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 0px;
+	width: 0px;
+	height: 2px;
+	background: var(--first-color);
+}
+.ViewProject:hover::before{
+	width: 100%;
+	background: white;
+	transition-property: all;
+	transition-duration: .3s;
+	transition-timing-function: ease-in-out;
+}
+
+#idProjects p{
+	padding-top: 30px; 
+	padding-bottom: 30px; 
+}
+
+
+
+input[type=checkbox]{
+	display: none;
+}
+input[type=checkbox]#zoom_img:checked ~ label > img{
+	cursor: zoom-out !important;
+
+
+	position: relative;
+	transform: scale(2.4) translate(25%)!important;
+	z-index: 900;
+
+	box-shadow: 0 0 500px 90px #101010;
+	transition: 1s; 
+}
+#zoom{
+    cursor: zoom-in;
+}
+
+.Portfolio {
+	display:grid;
+	
+	grid-template-columns: auto 30px auto; 
+
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-bottom: 300px;
+}
+
+
+/* Portfolio */
+.Portfolio .Photo {
+	grid-column: 1 / 2;
+	grid-row: 1 / 4;
+}
+.Portfolio .Name{
+	grid-column: 4 / 5;
+	grid-row: 1 / 2;
+}
+.Portfolio p{
+	grid-column: 4 / 5;
+	grid-row: 2/ 3;
+}
+.Portfolio .ViewProject{
+	grid-column: 4 / 5;
+	grid-row: 3 / 4;
+}
+/*-------------------Portfolio-end-------------------*/
+
+
+
+/*-------------------Portfolio2-start-------------------*/
+.Portfolio2 {
+
+	display:grid;
+	
+	grid-template-columns: auto 30px auto; 
+
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-bottom: 300px;
+}
+
+.Portfolio2 .Photo {
+	grid-column: 3 / 4;
+	grid-row: 1 / 4;
+}
+.Portfolio2 .Name{
+	grid-column: 1 / 2;
+	grid-row: 1 / 2;
+}
+.Portfolio2 p{
+	grid-column: 1 / 2;
+	grid-row: 2/ 3;
+
+}
+.Portfolio2 .ViewProject{
+	grid-column: 1 / 2;
+	grid-row: 3 / 4;
+}
+/*-------------------Portfolio2-end-------------------*/
+
+
+
+
+
+/*-------------------Portfolio-Projects-start-------------------*/
+#idProject1{
+	grid-template-rows: 44px 5fr 26px; 
+}
+#idProject1 .Photo{
+	width: 30vw;
+	height: auto;
+}
+/* #idProject1 .Photo:hover{
+	position: relative;
+	scale: 1.5;
+
+	right:50%;
+  	transform: translateX(-50%);
+
+	transition: 1s ease-in;
+	z-index: 900;
+} */
+
+
+
+#idProject2{
+	grid-template-rows: 44px 5fr 26px; 
+}
+#idProject2 .Photo{
+	width: 30vw;
+	height: auto;
+}
+
+
+
+
+#idProject3{
+	grid-template-rows: 44px 5fr 26px; 
+}
+#idProject3 .Photo{
+	width: 30vw;
+	height: auto;
+}
+
+
+
+#idProject4{
+	grid-template-rows: 44px 5fr 26px; 
+}
+#idProject4 .Photo{
+	width: 30vw;
+	height: auto;
+}
+
+
+
+#idProject5{
+	/* grid-template-columns: 5fr 1fr; */
+	grid-template-rows: 44px 1fr 26px; 
+}
+#idProject5 .Photo{
+	width: auto;
+	height: 50vh;
+}
+
+
+#idProject6{
+	grid-template-rows: 44px auto 26px; 
+}
+#idProject6 .Photo{
+	width: 30vw;
+	height: auto;
+}
+
+/*-------------------Portfolio-Projects-end-------------------*/

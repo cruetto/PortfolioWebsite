@@ -1,0 +1,52 @@
+/*-------------------NavBar-start-------------------*/
+.header{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding: 10px;
+	background: #131313; 
+	display: block;
+	justify-content: space-between;
+	text-align: right;
+	z-index: 100;
+
+	box-shadow: 0 1px 20px #191919;
+}
+
+
+.navbar{
+	margin-right: 10%;
+}
+.navbar a{
+	
+	position: relative;
+	font-size: 19px;
+	color: var(--first-color);
+	font-weight: 550;
+	text-decoration: none;
+	margin-left: 20px;
+}
+.navbar a:hover{
+	color: white;
+	transition-property: all;
+	transition-duration: .3s;
+	transition-timing-function: ease-in-out;
+}
+
+.navbar a::before{
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: var(--first-color);
+}
+.navbar a:hover::before{
+	width: 100%;
+	background: white;
+	transition-property: all;
+	transition-duration: .3s;
+	transition-timing-function: ease-in-out;
+}
+/*-------------------NavBar-end-------------------*/

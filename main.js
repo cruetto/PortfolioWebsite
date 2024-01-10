@@ -21,16 +21,33 @@ function copyTextToClipboard(textToCopy, nameOfObject) {
 }
 
 
-function ZoomImage(image, scaleCoef) {
-	console.log(image.className);
-	try {
-		// image.style.transform = "scale(" + scaleCoef + ")";
-		image.classList.add("zoomed");
-	} 
-	catch (err) {
-		console.error(err);
-	}
-}
+
+
+
+///--------Appear--------
+ // Name of the class which will add transition
+ const className = "appear-object";
+
+ const observer = new IntersectionObserver(entries => {
+	 entries.forEach(entry => {
+	   if (entry.isIntersecting) {
+		 entry.target.classList.add(className);
+		 return;
+	   }
+	    // To make "Appear animation" work every time
+	 	//entry.target.classList.remove(className);
+	 });
+   });
+   
+// Get multiple elements instead of a single one using "querySelectorAll"
+const elements = document.querySelectorAll('.' + className);
+
+// Delete animation to re-add it
+elements.forEach((element) => element.classList.remove(className));
+
+// Observe element
+elements.forEach((element) => observer.observe(element));
+
 
 
 
@@ -51,11 +68,11 @@ function fadeOutOnScroll(element) {
 
 	//When higher than middle
 	if (scrollTop > distanceToTop) {
-		opacity = 1 - (scrollTop - distanceToTop) / elementHeight;
+		opacity = 1.2 - (scrollTop - distanceToTop) / elementHeight * 2;
 	}
 	//When lower than middle
 	else if(scrollTop < distanceToTop){
-		opacity = 1.2 - (distanceToTop - scrollTop)/ screen.height;
+		opacity = 1.4 - (distanceToTop - scrollTop)/ screen.height * 2;
 	}
 
 		
@@ -109,16 +126,25 @@ const photosToMove = document.querySelectorAll('.Photo');
 
 var sectionAbout = document.getElementById('idAbout');
 var sectionProjectTitle = document.getElementById('idProjectsTitle');
-var sectionProject1 = document.getElementById('idPortfolio1');
-var sectionProject2 = document.getElementById('idPortfolio2');
+var sectionProject1 = document.getElementById('idProject1');
+var sectionProject2 = document.getElementById('idProject2');
+var sectionProject3 = document.getElementById('idProject3');
+var sectionProject4 = document.getElementById('idProject4');
+var sectionProject5 = document.getElementById('idProject5');
+var sectionProject6 = document.getElementById('idProject6');
 
 function scrollHandler() {
 	photosToMove.forEach((element) => MovePhotosOnScroll(element));
 	
+
 	fadeOutOnScroll(sectionAbout);
 	fadeOutOnScroll(sectionProjectTitle);
 	fadeOutOnScroll(sectionProject1);
 	fadeOutOnScroll(sectionProject2);
+	fadeOutOnScroll(sectionProject3);
+	fadeOutOnScroll(sectionProject4);
+	fadeOutOnScroll(sectionProject5);
+	fadeOutOnScroll(sectionProject6);
 
 }
 
@@ -131,25 +157,4 @@ window.addEventListener("scroll", function() {
 
 
 
-///--------Appear--------
- // Name of the class which will add transition
-const className = "appear-object";
 
-// Animation will be applied to each element with this class
-// Create the observer like the examples above
-const observer = new IntersectionObserver(entries => {
-	entries.forEach(entry => {
-	  if (entry.isIntersecting) {
-		entry.target.classList.add(className);
-		return;
-	  }
-  
-	  entry.target.classList.remove(className);
-	});
-  });
-  
-  // Get multiple elements instead of a single one using "querySelectorAll"
-  const squares = document.querySelectorAll('.' + className);
-  
-  // Loop over the elements and add each one to the observer
-  squares.forEach((element) => observer.observe(element));

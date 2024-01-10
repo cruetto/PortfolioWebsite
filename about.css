@@ -1,0 +1,75 @@
+/*-------------------About-start-------------------*/
+.about-title
+{
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 100px;
+	font-weight: bold;
+	font-size: 40px;
+}
+
+.about{
+	display: grid;
+	grid-template-columns: 2fr 3fr;
+	grid-template-rows: 1fr 5fr 2fr 3fr;
+
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-bottom: 20%;
+}
+
+
+
+.about .text{
+	color:#b6b8b9;
+}
+
+.about .Photo {
+	grid-column: 1 / 2;
+	grid-row: 1 / 4;
+
+	background: url(img/ProfilePhoto.jpg) no-repeat;
+	background-position: 20%;
+	background-size: 300px;
+}
+
+.about .subtitle{
+	grid-column: 2 / 3;
+	grid-row: 1 / 2;
+}
+
+.about .text{
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;
+}
+
+
+/*Social-start*/
+.about .socials{
+
+	grid-column: 2 / 3;
+	grid-row: 3 / 4;
+}
+
+.socials .fa {
+	padding: 20px;
+	font-size: 40px;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+	border-radius: 50%;
+
+	background: #1b1b1b;
+	color: var(--first-color);
+  }
+  
+.socials .fa:hover {
+	color: white;
+	opacity: 0.7;
+	transition-property: all;
+	transition-duration: .3s;
+	transition-timing-function: ease-in-out;
+}
+/*-------------------About-end-------------------*/
