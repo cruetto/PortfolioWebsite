@@ -120,7 +120,7 @@ function MovePhotosOnScroll(element) {
 		borderOfMoving = 200;// In pixels
 		translate = FindBetween(-borderOfMoving, borderOfMoving, translate);
 	} 
-	else if(window.innerWidth < 950){
+	else if(window.innerWidth < 1100){
 		translate = (distanceToTop - scrollTop) * 0.4 - 200;
 		borderOfMoving = 200;// In pixels
 		translate = FindBetween(30, borderOfMoving, translate);
