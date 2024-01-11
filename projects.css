@@ -62,7 +62,7 @@ input[type=checkbox]#zoom_img:checked ~ label > img{
 }
 
 
-@media screen and (min-width: 950px){
+@media screen and (min-width: 1100px){
 .Portfolio {
 	display:grid;
 	
