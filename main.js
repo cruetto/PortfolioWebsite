@@ -110,10 +110,24 @@ function MovePhotosOnScroll(element) {
 	var distanceToTop = window.scrollY + element.getBoundingClientRect().top;
 	var scrollTop = document.documentElement.scrollTop;
 	
-	var translate = (distanceToTop - scrollTop) * 0.4 - 100;
+
+	var translate;
+	var borderOfMoving;// In pixels 
+
+	if(window.innerWidth > 950){
+
+		translate = (distanceToTop - scrollTop) * 0.4 - 100;
+		borderOfMoving = 200;// In pixels
+		translate = FindBetween(-borderOfMoving, borderOfMoving, translate);
+	} 
+	else if(window.innerWidth < 950){
+		translate = (distanceToTop - scrollTop) * 0.4 - 200;
+		borderOfMoving = 200;// In pixels
+		translate = FindBetween(30, borderOfMoving, translate);
+	}
 	
-	var borderOfMoving = 200; // In pixels
-	translate = FindBetween(-borderOfMoving, borderOfMoving, translate);
+
+
 	element.style.transform = "translate(0px, " + translate + "px)";
 
 	// console.log("Translate: " + translate);
