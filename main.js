@@ -114,7 +114,7 @@ function MovePhotosOnScroll(element) {
 	var translate;
 	var borderOfMoving;// In pixels 
 
-	if(window.innerWidth > 950){
+	if(window.innerWidth > 1100){
 
 		translate = (distanceToTop - scrollTop) * 0.4 - 100;
 		borderOfMoving = 200;// In pixels

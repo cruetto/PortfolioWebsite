@@ -79,8 +79,8 @@
 /*-------------------About-end-------------------*/
 
 
-/*-------------------About 950px--------------------*/
-@media screen and (max-width: 950px){
+/*-------------------About 1100px--------------------*/
+@media screen and (max-width: 1100px){
 	.about{
 		display: grid;
 		grid-template-columns: 2fr 30px 3fr; 
