@@ -42,8 +42,6 @@ const observer = new IntersectionObserver(entries => {
 // Get multiple elements instead of a single one using "querySelectorAll"
 const elements = document.querySelectorAll('.' + className);
 
-// // Delete animation to re-add it
-// elements.forEach((element) => element.classList.remove(className));
 
 // Observe element
 elements.forEach((element) => observer.observe(element));
@@ -71,9 +69,9 @@ function fadeOutOnScroll(element) {
 		opacity = 1.2 - (scrollTop - distanceToTop) / elementHeight * 2;
 	}
 	//When lower than middle
-	else if(scrollTop < distanceToTop){
-		opacity = 1.4 - (distanceToTop - scrollTop)/ screen.height * 2;
-	}
+	// else if(scrollTop < distanceToTop){
+	// 	opacity = 1.4 - (distanceToTop - scrollTop) / screen.height * 2;
+	// }
 
 		
 	// console.log("ScrollTop: " + scrollTop);
