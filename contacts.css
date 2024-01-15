@@ -33,4 +33,20 @@
 	transition-duration: .3s;
 	transition-timing-function: ease-in-out;
 }
+
+@media screen and (max-width: 1100){
+	.Contact{
+		
+		text-align: center;
+		font-size: 8vw;
+	}
+	.Contact p{
+		font-size: 5vw;
+	}
+	.Contact span{
+		display: block;
+		word-wrap: break-word;
+		font-size: 6.5vw;
+	}
+}
 /*-------------------Footer-end-------------------*/

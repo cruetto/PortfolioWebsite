@@ -27,6 +27,7 @@ Media
 	--second-color: white;
 	--background-color: #101010;
 	--background-border-color:#272727;
+	--max-device-width: 1100;
 }
 
 
@@ -122,12 +123,6 @@ display:none;
 }
 /*-------------------Appear-end-------------------*/
 
-
-/*-------------------Fade-start-------------------*/
-.fadeOutOnScroll{
-	
-}
-/*-------------------Fade-end-------------------*/
 
 
 

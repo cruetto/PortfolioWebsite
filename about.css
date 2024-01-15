@@ -1,4 +1,5 @@
 /*-------------------About-start-------------------*/
+@media screen and (min-width: 1100px){
 .about-title
 {
 	text-align: center;
@@ -22,10 +23,6 @@
 
 
 
-.about .text{
-	color:#b6b8b9;
-}
-
 .about .Photo {
 	grid-column: 1 / 2;
 	grid-row: 1 / 4;
@@ -45,6 +42,8 @@
 .about .text{
 	grid-column: 3 / 4;
 	grid-row: 2 / 3;
+
+	color:#b6b8b9;
 }
 
 
@@ -76,27 +75,86 @@
 	transition-duration: .3s;
 	transition-timing-function: ease-in-out;
 }
+}
 /*-------------------About-end-------------------*/
 
 
 /*-------------------About 1100px--------------------*/
 @media screen and (max-width: 1100px){
-	.about{
-		display: grid;
-		grid-template-columns: 2fr 30px 3fr; 
-		grid-template-rows: auto auto 30px auto;
+.about{
+	/* display: grid;
+	grid-template-columns: 2fr 30px 3fr; 
+	grid-template-rows: auto auto 30px auto; */
+
+	margin-left: 1%;
+	margin-right: 1%;
+	margin-bottom: 40%;
 	
-		margin-left: 5%;
-		margin-right: 5%;
-		margin-bottom: 20%;
-	}
+}
+.about-title{
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 100px;
+	font-weight: bold;
+	font-size: 7vw;
+}
+
+
+.about .Photo {
+
+
+	width: 40vw;
+	height: auto;
+	float: left;
+	margin-right: 20px;
+}
+
+.about .subtitle{
+	
+	font-size: 5vw;
+	margin-bottom: 20px;
+}
+
+.about .text{
 	
 
+	color:#b6b8b9;
+	font-size: 5vw;
+}
 
 
+/*Social-start*/
+.about .socials{
+	translate: 28%;
 
+}
 
+.socials h3{
+	font-size: 7vw;
+}
 
+.socials .fa {
+	padding: 20px;
+	font-size: 10vw;
+	width: 12vw;
+	height: 12vw;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+	border-radius: 50%;
 
+	background: #1b1b1b;
+	color: var(--first-color);
+	
+	margin-left: 40px;
+}
+
+.socials .fa:hover {
+	color: white;
+	opacity: 0.7;
+	transition-property: all;
+	transition-duration: .3s;
+	transition-timing-function: ease-in-out;
+}
 }
 
