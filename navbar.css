@@ -50,9 +50,52 @@
 	transition-duration: .3s;
 	transition-timing-function: ease-in-out;
 }
+.header .icon {
+	display: none;
+}
 }
 
 
 @media screen and (max-width: 1100px){
+	/* Style the navigation menu */
+.header {
+	overflow: hidden;
+	position: fixed;
+	z-index: 900;
+	background-color: var(--background-color);
+	width: 100vw;
+}
+	
+	/* Hide the links inside the navigation menu (except for logo/home) */
+.header .navbar {
+	display: none;
+}
+
+/* Style navigation menu links */
+.header a {
+	color: var(--first-color);
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 7vw;
+	display: block;
+}
+
+/* Style the hamburger menu */
+.header .icon {
+	width: 7vw;
+	height: 7vw;
+	color: var(--first-color);
+	display: block;
+	right: 0;
+	top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.header a:hover {
+	background-color: #ddd;
+}
+
+/* Style the active link (or home/logo) */
+
 }
 /*-------------------NavBar-end-------------------*/
