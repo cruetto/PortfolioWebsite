@@ -107,6 +107,7 @@
 	height: auto;
 	float: left;
 	margin-right: 20px;
+	margin-bottom: 20px;
 }
 
 .about .subtitle{
@@ -116,7 +117,6 @@
 }
 
 .about .text{
-	
 
 	color:#b6b8b9;
 	font-size: 5vw;
