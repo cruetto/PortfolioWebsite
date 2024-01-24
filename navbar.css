@@ -91,9 +91,9 @@
 }
 
 /* Add a grey background color on mouse-over */
-.header a:hover {
+/* .header a:hover {
 	background-color: #ddd;
-}
+} */
 
 /* Style the active link (or home/logo) */
 
