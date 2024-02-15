@@ -20,14 +20,15 @@
 	font-size: 20px;
 }
 
-.Contact span{
+.Contact .info{
+	text-decoration: none;
 	cursor: pointer;
 	display: block;
 	color:var(--first-color);
 	margin-bottom: 30px;
 }
 
-.Contact span:hover{
+.Contact .info:hover{
 	color: white;
 	transition-property: all;
 	transition-duration: .3s;
@@ -43,7 +44,7 @@
 	.Contact p{
 		font-size: 5vw;
 	}
-	.Contact span{
+	.Contact .info{
 		display: block;
 		word-wrap: break-word;
 		font-size: 6.5vw;
