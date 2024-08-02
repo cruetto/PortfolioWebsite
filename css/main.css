@@ -1,0 +1,128 @@
+/* Created by Konstantinas Ovcinikovas */
+/* 
+
+*/
+/*-------------------Preloader-start-------------------*/
+#preloader{
+	background: var(--background-color) url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle fill="%23008F00" stroke="%23008F00" stroke-width="15" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin="0"></animate></circle><circle fill="%23008F00" stroke="%23008F00" stroke-width="15" opacity=".8" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin="0.05"></animate></circle><circle fill="%23008F00" stroke="%23008F00" stroke-width="15" opacity=".6" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin=".1"></animate></circle><circle fill="%23008F00" stroke="%23008F00" stroke-width="15" opacity=".4" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin=".15"></animate></circle><circle fill="%23008F00" stroke="%23008F00" stroke-width="15" opacity=".2" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin=".2"></animate></circle></svg>')	no-repeat center;
+	background-size: 10%;
+	height: 100vh;
+	width: 100%;
+	position: fixed;
+	z-index: 1000;
+}
+/*-------------------Preloader-end-------------------*/
+
+*{
+	margin: 0;
+	padding: 0;
+	/* border: solid 1px;  */
+}
+
+:root {
+	--first-color: #008f00;
+	--first-color-dark: #007900;
+	--second-color: white;
+	--background-color: #101010;
+	--background-border-color:#272727;
+	--max-device-width: 1100px;
+}
+
+
+
+body {
+	font-family: Courier,Arial; 
+	font-size: 25px; 
+	color: #ffffff;
+	
+	background-color: var(--background-color);
+}
+
+/* Disable horizontal scrolling */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+p{
+	color: #b6b8b9;
+}
+
+/* Background squares */
+#box1{
+	position: fixed;
+	right: -5%;
+	bottom: 0%;
+	z-index: -100;
+
+	width: 600px;
+	height: 600px;
+	transform: rotate(37deg);
+
+	border: ridge 1px;
+	border-color: var(--background-border-color);
+}	
+#box2{
+	position: fixed;
+	top: 10%;
+	z-index: -100;
+	
+	width: 400px;
+	height: 400px;
+	
+	transform: translate(-0px) rotate(15deg);
+	border: groove 1px;
+	border-color: var(--background-border-color);
+}
+
+.linkAnchor{
+	margin-bottom: 5%;
+	opacity: 0;
+}
+
+.hiperlink{
+	text-decoration: none;
+	color: var(--first-color);
+}
+
+video::-webkit-media-controls-volume-slider {
+display:none;
+}
+
+video::-webkit-media-controls-mute-button {
+display:none;
+}
+
+
+
+/*-------------------Appear-start-------------------*/
+@keyframes appear {
+	from {
+		opacity: 0.5;
+		transform: translate(0, 20%);
+	}
+  
+	to {
+		opacity: 1 !important;
+		transform: none !important;
+	}
+}
+
+ @media (prefers-reduced-motion: no-preference) {
+  
+} 
+.appear-object {
+	opacity: 0.5;
+}
+
+.appear-animation {
+    animation: appear 1s 1;
+	
+}
+/*-------------------Appear-end-------------------*/
+
+
+
+
+
+/* Created by Konstantinas Ovcinikovas */

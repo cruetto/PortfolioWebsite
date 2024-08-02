@@ -3,16 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	
-	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="css/main.css">
 	
-	<link rel="stylesheet" href="navbar.css">
-	<link rel="stylesheet" href="about.css">
-	<link rel="stylesheet" href="projects.css">
-	<link rel="stylesheet" href="contacts.css">
-	<link rel="stylesheet" href="hello.css">
+	<link rel="stylesheet" href="css/navbar.css">
+	<link rel="stylesheet" href="css/chat.css">
+
+	<link rel="stylesheet" href="css/about.css">
+	<link rel="stylesheet" href="css/projects.css">
+	<link rel="stylesheet" href="css/contacts.css">
+	<link rel="stylesheet" href="css/hello.css">
+	
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	
 	<title>My Portfolio</title>
 </head>
@@ -20,6 +23,49 @@
 <!-- background -->
 <div id="box1"></div>
 <div id="box2"></div>
+
+
+
+<!--Chat-->
+
+  
+<div id="chat-circle" class="btn btn-raised">
+	
+	<div id="chat-overlay"></div>
+		<i class="fa fa-comments-o" aria-hidden="true"></i>
+	</div>
+  
+
+	<div class="chat-box">
+
+		<div class="chat-box-header">
+			<span>ChatBot</span>
+			<span class="chat-box-toggle"><i class="fa fa-times" aria-hidden="true"></i></span>
+		</div>
+
+		<div class="chat-box-body">
+		<div class="chat-box-overlay">   
+		</div>
+		<div class="chat-logs">
+			<div id="cm-msg-0" class="chat-msg user">          
+				<div class="cm-msg-text">Hello Im ChatGTP Assistant, how can I help you?</div>        
+			</div>
+		</div><!--chat-log -->
+		</div>
+
+		<div class="chat-input">      
+			<input type="text" id="chat-input" placeholder="Send a message..."/>
+			<button type="submit" class="chat-submit" id="chat-submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>     
+		</div>
+
+	</div>
+  
+  
+</div>
+
+<!--Chat-->
+
+
 
 <body>
 	<div id="preloader"></div>
@@ -207,19 +253,16 @@
 
 
 
-<script>
+<script src="javascript/preloader.js"></script>
 
-var loader = document.getElementById("preloader")
-window.addEventListener("load", function(){
-	loader.style.display = "none";
-})
-
-</script>
 
 </body>
 </html>
 
 <!-- Add JS after to let html and CSS load -->
-<script src="main.js"></script>
+<script src="../javascript/main.js" type="module"></script>
+<script src="../javascript/chat.js" type="module"></script>
+
+
 
 <!-- Created by Konstantinas Ovcinikovas -->
