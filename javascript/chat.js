@@ -1,16 +1,32 @@
-
+import OpenAI from "openai";
 
 $(function() {
+
+  // const openai = new OpenAI();
+  // async function MakeRequest() {
+  //   const completion = await openai.chat.completions.create({
+  //     messages: [{ role: "system", content: "You are a helpful assistant." }],
+  //     model: "gpt-4o-mini",
+  //   });
+   
+  
+  //   console.log(completion.choices[0]);
+  // }
 
   var INDEX = 1; 
   
   $("#chat-submit").click(function(e) {
+
     e.preventDefault();
+
     var msg = $("#chat-input").val(); 
+
     if(msg.trim() == ''){
       return false;
     }
+
     generate_message(msg, 'self');
+
     var buttons = [
         {
           name: 'Existing User',
@@ -21,6 +37,7 @@ $(function() {
           value: 'new'
         }
       ];
+
     setTimeout(function() {      
       generate_message(msg, 'user');  
     }, 1000)
@@ -28,19 +45,25 @@ $(function() {
   })
   
 
+
   function generate_message(msg, type) {
     INDEX++;
+
     var str="";
     str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg "+type+"\">";
     str += "          <div class=\"cm-msg-text\">";
     str += msg;
     str += "          <\/div>";
     str += "        <\/div>";
+
     $(".chat-logs").append(str);
+
     $("#cm-msg-"+INDEX).hide().fadeIn(300);
+
       if(type == 'self'){
       $("#chat-input").val(''); 
       }    
+
     $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);    
   }  
   
