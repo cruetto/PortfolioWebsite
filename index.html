@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-	
+
 	<link rel="stylesheet" href="css/main.css">
-	
+
 	<link rel="stylesheet" href="css/navbar.css">
 	<link rel="stylesheet" href="css/chat.css">
 
@@ -12,11 +13,11 @@
 	<link rel="stylesheet" href="css/projects.css">
 	<link rel="stylesheet" href="css/contacts.css">
 	<link rel="stylesheet" href="css/hello.css">
-	
+
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	
+
 	<title>My Portfolio</title>
 </head>
 
@@ -28,39 +29,40 @@
 
 <!--Chat-->
 
-  
+
 <div id="chat-circle" class="btn btn-raised">
-	
+
 	<div id="chat-overlay"></div>
-		<i class="fa fa-comments-o" aria-hidden="true"></i>
+	<i class="fa fa-comments-o" aria-hidden="true"></i>
+</div>
+
+
+<div class="chat-box">
+
+	<div class="chat-box-header">
+		<span>ChatBot</span>
+		<span class="chat-box-toggle"><i class="fa fa-times" aria-hidden="true"></i></span>
 	</div>
-  
 
-	<div class="chat-box">
-
-		<div class="chat-box-header">
-			<span>ChatBot</span>
-			<span class="chat-box-toggle"><i class="fa fa-times" aria-hidden="true"></i></span>
-		</div>
-
-		<div class="chat-box-body">
-		<div class="chat-box-overlay">   
+	<div class="chat-box-body">
+		<div class="chat-box-overlay">
 		</div>
 		<div class="chat-logs">
-			<div id="cm-msg-0" class="chat-msg user">          
-				<div class="cm-msg-text">Hello Im ChatGTP Assistant, how can I help you?</div>        
+			<div id="cm-msg-0" class="chat-msg user">
+				<div class="cm-msg-text">Hello Im ChatGTP Assistant, how can I help you?</div>
 			</div>
 		</div><!--chat-log -->
-		</div>
-
-		<div class="chat-input">      
-			<input type="text" id="chat-input" placeholder="Send a message..."/>
-			<button type="submit" class="chat-submit" id="chat-submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>     
-		</div>
-
 	</div>
-  
-  
+
+	<div class="chat-input">
+		<input type="text" id="chat-input" placeholder="Send a message..." />
+		<button type="submit" class="chat-submit" id="chat-submit"><i class="fa fa-paper-plane-o"
+				aria-hidden="true"></i></button>
+	</div>
+
+</div>
+
+
 </div>
 
 <!--Chat-->
@@ -70,7 +72,7 @@
 <body>
 	<div id="preloader"></div>
 
-	
+
 
 	<header class="header">
 
@@ -84,19 +86,19 @@
 			<a href="#linkProjects">Projects</a>
 			<a href="#linkContacts">Contacts</a>
 		</div>
-		
-	</header>	
-		
-	
-	
+
+	</header>
+
+
+
 
 	<!-- Hello -->
 	<section class="hello" id="idHello">
 		<p>Hello</p>
 		<h1>I'm Konstantinas Ovčinikovas</h1>
 	</section>
-	
-	
+
+
 
 	<!-- About -->
 	<div class="linkAnchor" id="linkAbout">LinkAbout</div>
@@ -105,27 +107,31 @@
 		<h1 id="titlelink" class="about-title">About me</h1>
 
 		<div class="about">
-	
+
 			<img class="Photo" id="Check" src="img/ProfilePhoto.jpg" alt="No image">
-			
+
 			<h3 class="subtitle">Hello I'm Konstantinas</h3>
 			<p class="text">
-				I am "AI systems" third year student at <a class="hiperlink" href="https://vilniustech.lt">Vilniustech</a>. I took 3 year course of Back-end developer at <a class="hiperlink" href="https://nkkm.lt">NKKM</a>. Gained basic programming knowledge of C++, VisualBasic, created programs with Visual Studio on C#, managed databases on MySQL, built Android apps using Glide. And made some games with Unity and Gamemaker.
+				I am "AI systems" third year student at <a class="hiperlink"
+					href="https://vilniustech.lt">Vilniustech</a>. I took 3 year course of Back-end developer at <a
+					class="hiperlink" href="https://nkkm.lt">NKKM</a>. Gained basic programming knowledge of C++,
+				VisualBasic, created programs with Visual Studio on C#, managed databases on MySQL, built Android apps
+				using Glide. And made some games with Unity and Gamemaker.
 			</p>
-			
-			
+
+
 
 			<div class="socials">
 				<h3>Contact me</h3>
 				<a href="https://www.facebook.com/OvcinikovasKonstantinas" class="fa fa-facebook"></a>
 				<a href="https://www.linkedin.com/in/konstantinas-ovčinikovas-75a36b281/" class="fa fa-linkedin"></a>
-			</div>	
+			</div>
 
 		</div>
 	</section>
-	
 
-	
+
+
 
 	<!-- Portfolio -->
 	<div class="linkAnchor" id="linkProjects">LinkProjects</div>
@@ -140,12 +146,18 @@
 
 			<h2 class="Name"><a>C++ Vehicle Storage</a></h2>
 			<p>
-				Storage system written on C++ for my course work. The system is designed to manage cars and motorcycles in containers, and allows to modify the properties of each vehicle, such as the brand, model, engine parameters, and cost. The main objective of the project was to learn object-oriented programming concepts such as pointers, structures, and classes.
+				Storage system written on C++ for my course work. The system is designed to manage cars and motorcycles
+				in containers, and allows to modify the properties of each vehicle, such as the brand, model, engine
+				parameters, and cost. The main objective of the project was to learn object-oriented programming
+				concepts such as pointers, structures, and classes.
 			</p>
-			<a class="ViewProject" href="https://drive.google.com/file/d/1IwbCrhAg82IaJAJycwJaqHPz6tjGepIy/view?usp=sharing">View Project</a>
-			
-			
-			<video class="Photo" src="img/Projects/C++VehicleStorage.mp4" alt="Not loaded" autoplay muted controls loop></video>
+			<a class="ViewProject"
+				href="https://drive.google.com/file/d/1IwbCrhAg82IaJAJycwJaqHPz6tjGepIy/view?usp=sharing">View
+				Project</a>
+
+
+			<video class="Photo" src="img/Projects/C++VehicleStorage.mp4" alt="Not loaded" autoplay muted controls
+				loop></video>
 		</div>
 
 
@@ -157,7 +169,9 @@
 
 			<h2 class="Name"><a>Pacman using Gamemaker</a></h2>
 			<p>
-				I created a clone of Pacman using <a class="hiperlink" href="https://gamemaker.io/en">Gamemaker</a> while studying the basics of coding at NKKM courses. During this project, I gained an understanding of how simple games are made and how collisions, hitboxes, movement, and gravity works.
+				I created a clone of Pacman using <a class="hiperlink" href="https://gamemaker.io/en">Gamemaker</a>
+				while studying the basics of coding at NKKM courses. During this project, I gained an understanding of
+				how simple games are made and how collisions, hitboxes, movement, and gravity works.
 			</p>
 			<a class="ViewProject" href="https://github.com/cruetto/PortfolioProjects">View Project</a>
 		</div>
@@ -169,30 +183,35 @@
 
 			<h2 class="Name"><a>Tracking app with Glide</a></h2>
 			<p>
-				This is a side project created on <a class="hiperlink" href="https://www.glideapps.com">Glide</a>, a no-code platform. It’s a tracker for adding the number of exercises that the user completes every day. This tracker can help users see their growth and continue training.
+				This is a side project created on <a class="hiperlink" href="https://www.glideapps.com">Glide</a>, a
+				no-code platform. It’s a tracker for adding the number of exercises that the user completes every day.
+				This tracker can help users see their growth and continue training.
 			</p>
 			<a class="ViewProject" href="https://trackeo.glide.page">View Project</a>
-			
-			<video class="Photo"  src="img/Projects/GlideTrackeo.mp4" alt="Not loaded" autoplay muted controls loop></video>
+
+			<video class="Photo" src="img/Projects/GlideTrackeo.mp4" alt="Not loaded" autoplay muted controls
+				loop></video>
 
 		</div>
 
-		
-		
+
+
 		<!-- Project 4 Matlab-->
-		
+
 
 		<div class="Portfolio fadeOutOnScroll appear-object" id="idProject4">
-			
+
 			<input type="checkbox" name="" id="zoom_img">
 			<label for="zoom_img">
 				<img class="Photo" id="zoom" src="img/Projects/Matlab_Recognition.png" alt="Image not loaded">
 			</label>
-			
+
 
 			<h2 class="Name"><a>Matlab Object recognition</a></h2>
 			<p>
-				One of many <a class="hiperlink" href="https://ch.mathworks.com/products/matlab.html">Matlab</a> laboratory works in university. Main point was to research how already trained network classifies objects on image. Where does network „looks“ and which features defines what is depicted.
+				One of many <a class="hiperlink" href="https://ch.mathworks.com/products/matlab.html">Matlab</a>
+				laboratory works in university. Main point was to research how already trained network classifies
+				objects on image. Where does network „looks“ and which features defines what is depicted.
 			</p>
 			<a class="ViewProject" href="https://github.com/cruetto/PortfolioProjects">View Project</a>
 		</div>
@@ -206,11 +225,16 @@
 			<img class="Photo" src="img/Projects/CatFeeder.png" alt="Image not loaded">
 
 			<p>
-				I designed an automatic feeder for pets. Structure was designed on <a class="hiperlink" href="https://www.autodesk.com/products/autocad/overview?term=1-YEAR&tab=subscription">AutoCAD</a> and 3D-printed. The mechanism was programmed using <a class="hiperlink" href="https://www.arduino.cc">Arduino</a>. Working on this project presented many challenges, and I had to use a lot of engineering ideas to find different solutions to make it work. Although it doesn’t work perfectly, it was a valuable learning experience.
+				I designed an automatic feeder for pets. Structure was designed on <a class="hiperlink"
+					href="https://www.autodesk.com/products/autocad/overview?term=1-YEAR&tab=subscription">AutoCAD</a>
+				and 3D-printed. The mechanism was programmed using <a class="hiperlink"
+					href="https://www.arduino.cc">Arduino</a>. Working on this project presented many challenges, and I
+				had to use a lot of engineering ideas to find different solutions to make it work. Although it doesn’t
+				work perfectly, it was a valuable learning experience.
 			</p>
-			
+
 			<a class="ViewProject" href="https://github.com/cruetto/PortfolioProjects">View Project</a>
-			
+
 		</div>
 
 
@@ -221,7 +245,10 @@
 			<img class="Photo" src="img/Projects/WebsitePortfolio.gif" alt="Image not loaded">
 			<h2 class="Name"><a>Website Portfolio</a></h2>
 			<p>
-				This website started as simple university laboratory work. But I decided to make it great as I can. While improving this website I learned how to make beautiful things with CSS, Javascript and HTML, also I became more close to github. I was using Visual Studio Code with “LiveServer” and “Github Codespaces”. And it was cool experience.
+				This website started as simple university laboratory work. But I decided to make it great as I can.
+				While improving this website I learned how to make beautiful things with CSS, Javascript and HTML, also
+				I became more close to github. I was using Visual Studio Code with “LiveServer” and “Github Codespaces”.
+				And it was cool experience.
 			</p>
 			<a class="ViewProject" href="https://github.com/cruetto/PortfolioWebsite">View Project</a>
 		</div>
@@ -229,34 +256,36 @@
 
 
 
-	
-<footer>
-	<!-- Contacts -->
-	<div class="linkAnchor" id="linkContacts">LinkContacts</div>
-	<div class="Contact fadeOutOnScroll appear-object" id="idContacts">
-		<div class="socials">
-			<h3>Contact Information</h3>
-			
-			<p>Click to Copy</p>
-			<span class="info" onclick="copyTextToClipboard('konstantinas.ovcinikovas@gmail.com', 'Email')">konstantinas.ovcinikovas@gmail.com</span>
-			<a class="info" href="tel:+37060140209">+37060140209</a>
-			<!-- <span onclick="copyTextToClipboard('+37060140209', 'Number')">+37060140209</span> -->
 
-			
-			
-			<a href="https://www.facebook.com/OvcinikovasKonstantinas" class="fa fa-facebook"></a>
-			<a href="https://www.linkedin.com/in/konstantinas-ovčinikovas-75a36b281/" class="fa fa-linkedin"></a>
+	<footer>
+		<!-- Contacts -->
+		<div class="linkAnchor" id="linkContacts">LinkContacts</div>
+		<div class="Contact fadeOutOnScroll appear-object" id="idContacts">
+			<div class="socials">
+				<h3>Contact Information</h3>
+
+				<p>Click to Copy</p>
+				<span class="info"
+					onclick="copyTextToClipboard('konstantinas.ovcinikovas@gmail.com', 'Email')">konstantinas.ovcinikovas@gmail.com</span>
+				<a class="info" href="tel:+37060140209">+37060140209</a>
+				<!-- <span onclick="copyTextToClipboard('+37060140209', 'Number')">+37060140209</span> -->
+
+
+
+				<a href="https://www.facebook.com/OvcinikovasKonstantinas" class="fa fa-facebook"></a>
+				<a href="https://www.linkedin.com/in/konstantinas-ovčinikovas-75a36b281/" class="fa fa-linkedin"></a>
+			</div>
+
 		</div>
-		
-	</div>
-</footer>
+	</footer>
 
 
 
-<script src="javascript/preloader.js"></script>
+	<script src="javascript/preloader.js"></script>
 
 
 </body>
+
 </html>
 
 <!-- Add JS after to let html and CSS load -->
