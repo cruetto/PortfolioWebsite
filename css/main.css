@@ -1,41 +1,42 @@
-/* Created by Konstantinas Ovcinikovas */
-/* 
+/* Created by Konstantinas Ovčinikovas */
 
-*/
 /*-------------------Preloader-start-------------------*/
-#preloader{
-	background: var(--background-color) url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle fill="%23008F00" stroke="%23008F00" stroke-width="15" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin="0"></animate></circle><circle fill="%23008F00" stroke="%23008F00" stroke-width="15" opacity=".8" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin="0.05"></animate></circle><circle fill="%23008F00" stroke="%23008F00" stroke-width="15" opacity=".6" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin=".1"></animate></circle><circle fill="%23008F00" stroke="%23008F00" stroke-width="15" opacity=".4" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin=".15"></animate></circle><circle fill="%23008F00" stroke="%23008F00" stroke-width="15" opacity=".2" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin=".2"></animate></circle></svg>')	no-repeat center;
-	background-size: 10%;
-	height: 100vh;
-	width: 100%;
-	position: fixed;
-	z-index: 1000;
+#preloader {
+    background: var(--background-color) url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle fill="%23008F00" stroke="%23008F00" stroke-width="15" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin="0"></animate></circle><circle fill="%23008F00" stroke="%23008F00" stroke-width="15" opacity=".8" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin="0.05"></animate></circle><circle fill="%23008F00" stroke="%23008F00" stroke-width="15" opacity=".6" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin=".1"></animate></circle><circle fill="%23008F00" stroke="%23008F00" stroke-width="15" opacity=".4" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin=".15"></animate></circle><circle fill="%23008F00" stroke="%23008F00" stroke-width="15" opacity=".2" r="15" cx="35" cy="100"><animate attributeName="cx" calcMode="spline" dur="2" values="35;165;165;35;35" keySplines="0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1" repeatCount="indefinite" begin=".2"></animate></circle></svg>') no-repeat center;
+    background-size: 10%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
 }
 /*-------------------Preloader-end-------------------*/
 
-*{
-	margin: 0;
-	padding: 0;
-	/* border: solid 1px;  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
-	--first-color: #008f00;
-	--first-color-dark: #007900;
-	--second-color: white;
-	--background-color: #101010;
-	--background-border-color:#272727;
-	--max-device-width: 1100px;
+    --first-color: #008f00;
+    --first-color-dark: #007900;
+    --second-color: white;
+    --background-color: #101010;
+    --background-border-color: #272727;
+    --text-secondary-color: #b6b8b9;
+    --header-height: 70px; /* Define header height variable */
 }
 
-
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
 
 body {
-	font-family: Courier,Arial; 
-	font-size: 25px; 
-	color: #ffffff;
-	
-	background-color: var(--background-color);
+    font-family: 'Courier New', Courier, monospace, Arial, sans-serif;
+    font-size: 25px;
+    color: #ffffff;
+    background-color: var(--background-color);
+    line-height: 1.6;
 }
 
 /* Disable horizontal scrolling */
@@ -44,85 +45,84 @@ html, body {
     overflow-x: hidden;
 }
 
-p{
-	color: #b6b8b9;
+p {
+    color: var(--text-secondary-color);
 }
 
 /* Background squares */
-#box1{
-	position: fixed;
-	right: -5%;
-	bottom: 0%;
-	z-index: -100;
+#box1 {
+    position: fixed; right: -5%; bottom: 0%; z-index: -100;
+    width: 600px; height: 600px; transform: rotate(37deg);
+    border: ridge 1px; border-color: var(--background-border-color);
+    opacity: 0.4; pointer-events: none;
+}
+#box2 {
+    position: fixed; top: 10%; left: 5%; z-index: -100;
+    width: 400px; height: 400px; transform: rotate(15deg);
+    border: groove 1px; border-color: var(--background-border-color);
+    opacity: 0.4; pointer-events: none;
+}
+@media screen and (max-width: 600px) { #box1, #box2 { opacity: 0.2; } }
 
-	width: 600px;
-	height: 600px;
-	transform: rotate(37deg);
 
-	border: ridge 1px;
-	border-color: var(--background-border-color);
-}	
-#box2{
-	position: fixed;
-	top: 10%;
-	z-index: -100;
-	
-	width: 400px;
-	height: 400px;
-	
-	transform: translate(-0px) rotate(15deg);
-	border: groove 1px;
-	border-color: var(--background-border-color);
+/* Add space above scroll targets to account for fixed header */
+#linkAbout,
+#linkProjects,
+#linkContacts {
+    scroll-margin-top: calc(var(--header-height) + 20px); /* Add extra 20px buffer */
 }
 
-.linkAnchor{
-	margin-bottom: 5%;
-	opacity: 0;
+/* Add significant spacing between major sections */
+.about-section,
+.projects-section,
+.footer-section {
+    margin-top: 15vh; /* Default space above sections */
+    padding-top: 5vh; /* Internal padding */
 }
-
-.hiperlink{
-	text-decoration: none;
-	color: var(--first-color);
-}
-
-video::-webkit-media-controls-volume-slider {
-display:none;
-}
-
-video::-webkit-media-controls-mute-button {
-display:none;
+/* Increase space specifically ABOVE Projects section */
+.projects-section {
+    /* *** INCREASED MARGIN TOP *** */
+    margin-top: 25vh; /* More space between About and Projects */
 }
 
 
+.hyperlink {
+    text-decoration: none; color: var(--first-color); font-weight: bold;
+}
+.hyperlink:hover { text-decoration: underline; color: var(--second-color); }
 
-/*-------------------Appear-start-------------------*/
+/* Video controls cleanup */
+video::-webkit-media-controls-volume-slider,
+video::-webkit-media-controls-mute-button { display: none; }
+
+/*-------------------Appear Animation-start-------------------*/
 @keyframes appear {
-	from {
-		opacity: 0.5;
-		transform: translate(0, 20%);
-	}
-  
-	to {
-		opacity: 1 !important;
-		transform: none !important;
-	}
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.appear-animation { animation: appear 1s ease-out forwards; }
+.appear-object { opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .appear-object, .appear-animation { animation: none; opacity: 1; }
+}
+/*-------------------Appear Animation-end-------------------*/
+
+/* Basic Footer Styling */
+footer { /* Now uses .footer-section class for spacing */
+    padding: 40px 0;
+    border-top: 1px solid var(--background-border-color);
+}
+.footer-credit {
+    text-align: center; color: var(--text-secondary-color);
+    font-size: 16px; margin-top: 40px;
 }
 
- @media (prefers-reduced-motion: no-preference) {
-  
-} 
-.appear-object {
-	opacity: 0.5;
+/* Responsive base font size & header height */
+@media screen and (max-width: 1100px) {
+    body { font-size: 18px; }
+    :root { --header-height: 60px; }
 }
-
-.appear-animation {
-    animation: appear 1s 1;
-	
+@media screen and (max-width: 600px) {
+    body { font-size: 16px; }
+     :root { --header-height: 55px; }
 }
-/*-------------------Appear-end-------------------*/
-
-
-
-
-
-/* Created by Konstantinas Ovcinikovas */

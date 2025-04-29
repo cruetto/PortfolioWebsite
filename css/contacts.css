@@ -1,53 +1,85 @@
-/*-------------------Footer-start-------------------*/
-.Contact{
-	text-align: center;
-	margin-bottom: 200px;
+/*-------------------Contacts Footer Section-start-------------------*/
+
+/* Target address element */
+address.Contact {
+    text-align: center;
+    margin-bottom: 50px; /* Space below contact info before copyright */
+    padding: 0 5%; /* Add padding */
 }
 
-.Contact .copyText{
-	margin: auto;
-	display: block;
-	color: var(--first-color);
-	margin-bottom: 60px;
-	width: max-content;
+address.Contact h3 {
+    margin-bottom: 30px; /* Space below heading */
+    font-size: 1.5em; /* Adjust heading size */
 }
 
-.Contact h3{
-	margin-bottom: 40px;
+address.Contact p {
+    font-size: 0.9em; /* Smaller text for instructions */
+    color: var(--text-secondary-color);
+    margin-bottom: 15px;
 }
 
-.Contact p{
-	font-size: 20px;
+/* Style for clickable elements (links and buttons) */
+address.Contact a.info,
+address.Contact button.copy-button {
+    display: block; /* Each on its own line */
+    color: var(--first-color);
+    margin: 0 auto 20px auto; /* Center and add space below */
+    font-size: 1.1em; /* Adjust font size */
+    max-width: max-content; /* Prevent stretching */
+    cursor: pointer;
+    text-decoration: none; /* Remove default underline */
+    transition: color 0.3s ease-in-out;
+    word-break: break-all; /* Break long emails/numbers if needed */
 }
 
-.Contact .info{
-	text-decoration: none;
-	cursor: pointer;
-	display: block;
-	color:var(--first-color);
-	margin-bottom: 30px;
+/* Specific styles for the copy button */
+address.Contact button.copy-button {
+    background: none;
+    border: none;
+    padding: 0; /* Remove default padding */
+    font-family: inherit; /* Inherit font */
+    font-weight: bold; /* Make it look like a link */
 }
 
-.Contact .info:hover{
-	color: white;
-	transition-property: all;
-	transition-duration: .3s;
-	transition-timing-function: ease-in-out;
+address.Contact a.info:hover,
+address.Contact button.copy-button:hover {
+    color: white;
+    text-decoration: underline; /* Add underline on hover */
 }
 
-@media screen and (max-width: 1100px){
-	.Contact{
-		display: block;
-		text-align: center;
-		font-size: 10vw;
-	}
-	.Contact p{
-		font-size: 5vw;
-	}
-	.Contact .info{
-		display: block;
-		word-wrap: break-word;
-		font-size: 6.5vw;
-	}
+/* Container for social icons in footer */
+address.Contact .social-links {
+    margin-top: 30px; /* Space above icons */
 }
-/*-------------------Footer-end-------------------*/
+
+address.Contact .social-links a.fa {
+    display: inline-block;
+    padding: 10px;
+    font-size: 22px;
+    width: 45px;
+    height: 45px;
+    line-height: 25px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 8px;
+    border-radius: 50%;
+    background: #2a2a2a;
+    color: var(--first-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+address.Contact .social-links a.fa:hover {
+    background-color: var(--first-color);
+    color: white;
+}
+
+
+/* Mobile Styles */
+@media screen and (max-width: 1099px) {
+    address.Contact { margin-bottom: 40px; }
+    address.Contact h3 { font-size: 1.4em; margin-bottom: 25px; }
+    address.Contact p { font-size: 0.8em; }
+    address.Contact a.info, address.Contact button.copy-button { font-size: 1em; margin-bottom: 15px; }
+    address.Contact .social-links a.fa { font-size: 20px; width: 40px; height: 40px; line-height: 20px; padding: 10px; }
+}
+/*-------------------Contacts Footer Section-end-------------------*/

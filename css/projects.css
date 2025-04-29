@@ -1,300 +1,116 @@
-/*-------------------Portfolio-start-------------------*/
-/* General */
-.projects-title{
-	text-align: center;
-	margin-bottom: 100px;
+/*-------------------Projects-start-------------------*/
+
+/* Section Title (H2) */
+.projects-title {
+    text-align: center;
+    font-size: 2.2em;
+    /* *** ADDED MARGIN BOTTOM TO PUSH FIRST PROJECT DOWN *** */
+    margin-bottom: 12vh; /* Space between title and first project article */
 }
 
-.ViewProject{
-
-	position: relative;
-	display: inline-block;
-	width: max-content;
-	font-size: 25px;
-	color: var(--first-color);
-	text-decoration: none;
+/* Common Project Item Styles */
+article.Portfolio,
+article.Portfolio2 {
+    margin-left: auto;
+    margin-right: auto;
+    /* *** USER SET MARGIN BOTTOM *** */
+    margin-bottom: 40vh; /* Space between projects */
+    max-width: 1400px;
+    padding: 0 5%;
 }
-.ViewProject:hover{
-	color: white;
-	transition-property: all;
-	transition-duration: .3s;
-	transition-timing-function: ease-in-out;
-}
-.ViewProject::before{
-	content: '';
-	position: absolute;
-	top: 100%;
-	left: 0px;
-	width: 0px;
-	height: 2px;
-	background: var(--first-color);
-}
-.ViewProject:hover::before{
-	width: 100%;
-	background: white;
-	transition-property: all;
-	transition-duration: .3s;
-	transition-timing-function: ease-in-out;
-}
-
-#idProjects p{
-	padding-top: 30px; 
-	padding-bottom: 30px; 
+/* Ensure last project doesn't have excessive margin */
+article.Portfolio:last-of-type,
+article.Portfolio2:last-of-type {
+    margin-bottom: 20vh; /* Less margin for the very last one */
 }
 
 
-
-input[type=checkbox]{
-	display: none;
-}
-input[type=checkbox]#zoom_img:checked ~ label > img{
-	cursor: zoom-out !important;
-
-
-	position: relative;
-	transform: translate(25%)!important;
-	width: 100%;
-	z-index: 900;
-
-	box-shadow: 0 0 500px 90px #101010;
-	transition: 1s; 
-}
-#zoom{
-    cursor: zoom-in;
+article.Portfolio h3.Name,
+article.Portfolio2 h3.Name {
+    font-size: 1.6em;
+    margin-bottom: 15px;
 }
 
-
-@media screen and (min-width: 1100px){
-.Portfolio {
-	display:grid;
-	
-	grid-template-columns: auto 30px auto; 
-
-	margin-left: 15%;
-	margin-right: 15%;
-	margin-bottom: 300px;
+article.Portfolio p,
+article.Portfolio2 p {
+    color: var(--text-secondary-color);
+    padding-top: 15px;
+    padding-bottom: 25px;
+    line-height: 1.7;
 }
 
-
-/* Portfolio */
-.Portfolio .Photo {
-	grid-column: 1 / 2;
-	grid-row: 1 / 4;
+/* Common View Project Link */
+.ViewProject {
+    position: relative; display: inline-block; width: max-content;
+    font-size: 1em; color: var(--first-color); text-decoration: none;
+    font-weight: bold; padding-bottom: 3px; transition: color 0.3s ease-in-out;
 }
-.Portfolio .Name{
-	grid-column: 4 / 5;
-	grid-row: 1 / 2;
+.ViewProject:hover { color: white; }
+.ViewProject::before {
+    content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+    background: var(--first-color);
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
-.Portfolio p{
-	grid-column: 4 / 5;
-	grid-row: 2/ 3;
-}
-.Portfolio .ViewProject{
-	grid-column: 4 / 5;
-	grid-row: 3 / 4;
-}
-/*-------------------Portfolio-end-------------------*/
+.ViewProject:hover::before { width: 100%; background: white; }
 
-
-
-/*-------------------Portfolio2-start-------------------*/
-.Portfolio2 {
-
-	display:grid;
-	
-	grid-template-columns: auto 30px auto; 
-
-	margin-left: 15%;
-	margin-right: 15%;
-	margin-bottom: 300px;
+/* Common Media Styles (Image/Video) */
+article.Portfolio .Photo,
+article.Portfolio2 .Photo {
+    width: 100%; height: auto; max-height: 70vh; border-radius: 8px;
+    display: block; object-fit: cover; /* Or contain */
+    /* Parallax transform applied by JS */
 }
 
-.Portfolio2 .Photo {
-	grid-column: 3 / 4;
-	grid-row: 1 / 4;
-}
-.Portfolio2 .Name{
-	grid-column: 1 / 2;
-	grid-row: 1 / 2;
-}
-.Portfolio2 p{
-	grid-column: 1 / 2;
-	grid-row: 2/ 3;
-
-}
-.Portfolio2 .ViewProject{
-	grid-column: 1 / 2;
-	grid-row: 3 / 4;
-}
-/*-------------------Portfolio2-end-------------------*/
-
-
-
-
-
-/*-------------------Portfolio-Projects-start-------------------*/
-#idProject1{
-	grid-template-rows: 44px 5fr 26px; 
-}
-#idProject1 .Photo{
-	width: 30vw;
-	height: auto;
-}
-/* #idProject1 .Photo:hover{
-	position: relative;
-	scale: 1.5;
-
-	right:50%;
-  	transform: translateX(-50%);
-
-	transition: 1s ease-in;
-	z-index: 900;
-} */
-
-
-
-#idProject2{
-	grid-template-rows: 44px 5fr 26px; 
-}
-#idProject2 .Photo{
-	width: 30vw;
-	height: auto;
+/* Zoom functionality */
+input[type=checkbox].zoom-checkbox { display: none; }
+label.zoom-label > img { cursor: zoom-in; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+input[type=checkbox].zoom-checkbox:checked ~ label.zoom-label > img {
+    cursor: zoom-out !important; transform: scale(1.5) !important;
+    z-index: 900; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
 }
 
+/* Desktop Layouts (Grid) */
+@media screen and (min-width: 1100px) {
+    article.Portfolio,
+    article.Portfolio2 {
+        display: grid; align-items: center; gap: 0 60px;
+        grid-template-columns: 1.2fr 60px 1fr;
+    }
+    article.Portfolio2 { grid-template-columns: 1fr 60px 1.2fr; }
 
+    /* Grid placement */
+    article.Portfolio h3.Name, article.Portfolio p, article.Portfolio .ViewProject { grid-column: 1 / 2; }
+    article.Portfolio .Photo { grid-column: 3 / 4; grid-row: 1 / 4; }
+    article.Portfolio2 .Photo { grid-column: 1 / 2; grid-row: 1 / 4; }
+    article.Portfolio2 h3.Name, article.Portfolio2 p, article.Portfolio2 .ViewProject { grid-column: 3 / 4; }
 
-
-#idProject3{
-	grid-template-rows: 44px 5fr 26px; 
-}
-#idProject3 .Photo{
-	width: 30vw;
-	height: auto;
-}
-
-
-
-#idProject4{
-	grid-template-rows: 44px 5fr 26px; 
-}
-#idProject4 .Photo{
-	width: 30vw;
-	height: auto;
-}
-
-
-
-#idProject5{
-	/* grid-template-columns: 5fr 1fr; */
-	grid-template-rows: 44px 1fr 26px; 
-}
-#idProject5 .Photo{
-	width: auto;
-	height: 50vh;
+    /* Row placement */
+    article.Portfolio h3.Name, article.Portfolio2 h3.Name { grid-row: 1; margin-bottom: 10px; align-self: end;}
+    article.Portfolio p, article.Portfolio2 p { grid-row: 2; padding: 0;}
+    article.Portfolio .ViewProject, article.Portfolio2 .ViewProject { grid-row: 3; align-self: start; margin-top: 10px;}
 }
 
+/* Mobile Layout (Stacking) */
+@media screen and (max-width: 1099px) {
+    .projects-title { font-size: 1.8em; margin-bottom: 8vh; } /* Adjusted mobile title margin */
+    article.Portfolio,
+    article.Portfolio2 {
+        display: flex; flex-direction: column;
+        /* *** USER SET MARGIN BOTTOM (Applied via non-media query rule) *** */
+        /* margin-bottom: 25vh; */ /* Example mobile value if different needed */
+        padding: 0 5%;
+    }
+     article.Portfolio:last-of-type,
+     article.Portfolio2:last-of-type {
+         margin-bottom: 15vh;
+     }
 
+    article.Portfolio h3.Name, article.Portfolio2 h3.Name { order: 1; font-size: 1.4em; text-align: center; margin-bottom: 10px; }
+    article.Portfolio p, article.Portfolio2 p { order: 2; font-size: 1em; text-align: center; padding-top: 10px; padding-bottom: 20px; }
+    article.Portfolio .ViewProject, article.Portfolio2 .ViewProject { order: 3; font-size: 1em; margin: 0 auto 30px auto; }
+    article.Portfolio .Photo, article.Portfolio2 .Photo { order: 4; width: 90%; max-width: 450px; margin: 0 auto; max-height: 60vh; }
 
-#idProject6{
-	grid-template-rows: 44px auto 26px; 
+    #idProject5 { /* Special cases if needed */ }
+    #idProject5 .Photo { /* Custom styles if needed */ }
 }
-#idProject6 .Photo{
-	width: 30vw;
-	height: auto;
-}
-}
-/*-------------------Portfolio-Projects-end-------------------*/
-
-
-
-
-
-@media screen and (max-width: 1100px){
-	.projects-title{
-		font-size: 7vw;
-	}
-
-	.Portfolio,.Portfolio2 {
-		display:grid;
-		
-		grid-template-rows: auto auto auto 30 px auto; 
-	
-		margin-left: 5%;
-		margin-right: 5%;
-		margin-bottom: 40vh;
-
-		font-size: 5vw;
-	}
-	
-	
-	/* Portfolio */
-	
-	.Portfolio .Name,.Portfolio2 .Name{
-		grid-row: 1 / 2;
-	}
-	.Portfolio p,.Portfolio2 p{
-		grid-row: 2 / 3;
-	}
-	.Portfolio .ViewProject,.Portfolio2 .ViewProject{
-		grid-row: 3 / 4;
-		font-size: 5vw;
-	}
-	.Portfolio .Photo,.Portfolio2 .Photo {
-		grid-row: 5 / 6;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	/*-------------------Portfolio-end-------------------*/
-
-
-	#idProject1 .Photo{
-		width: 80vw;
-		height: auto;
-	}
-
-	
-
-	#idProject2 .Photo{
-		width: 80vw;
-		height: auto;
-	}
-	
-	
-
-	#idProject3 .Photo{
-		width: 80vw;
-		height: auto;
-	}
-	
-	
-	
-	#idProject4 .Photo{
-		width: 80vw;
-		height: auto;
-	}
-	
-	
-	#idProject5 {
-		display: block;
-
-		margin-left: 3%;
-		margin-right: 0%;
-		margin-bottom: 50vh;
-	}
-	#idProject5 .Photo {
-		
-		width: auto;
-		height: 40vh;
-		float: right;
-		margin-left: 20px;
-		margin-bottom: 20px;
-	}
-	
-	
-
-	#idProject6 .Photo{
-		width: 80vw;
-		height: auto;
-		
-	}
-}
+/*-------------------Projects-end-------------------*/

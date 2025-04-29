@@ -1,297 +1,176 @@
 <!DOCTYPE html>
+<!-- Set default language -->
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/contacts.css">
+    <link rel="stylesheet" href="css/hello.css">
 
-	<link rel="stylesheet" href="css/navbar.css">
-	<link rel="stylesheet" href="css/chat.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<link rel="stylesheet" href="css/about.css">
-	<link rel="stylesheet" href="css/projects.css">
-	<link rel="stylesheet" href="css/contacts.css">
-	<link rel="stylesheet" href="css/hello.css">
+    <!-- Changed title to be set by JS -->
+    <title data-lang-key="pageTitle">Konstantinas Ovčinikovas - Portfolio</title>
+    <link rel="icon" href="img/favicon.ico"> <!-- Add a link to your favicon -->
 
-
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-	<title>My Portfolio</title>
 </head>
 
-<!-- background -->
-<div id="box1"></div>
-<div id="box2"></div>
-
-
-
-<!--Chat-->
-
-
-<div id="chat-circle" class="btn btn-raised">
-
-	<div id="chat-overlay"></div>
-	<i class="fa fa-comments-o" aria-hidden="true"></i>
-</div>
-
-
-<div class="chat-box">
-
-	<div class="chat-box-header">
-		<span>ChatBot</span>
-		<span class="chat-box-toggle"><i class="fa fa-times" aria-hidden="true"></i></span>
-	</div>
-
-	<div class="chat-box-body">
-		<div class="chat-box-overlay">
-		</div>
-		<div class="chat-logs">
-			<div id="cm-msg-0" class="chat-msg user">
-				<div class="cm-msg-text">Hello Im ChatGTP Assistant, how can I help you?</div>
-			</div>
-		</div><!--chat-log -->
-	</div>
-
-	<div class="chat-input">
-		<input type="text" id="chat-input" placeholder="Send a message..." />
-		<button type="submit" class="chat-submit" id="chat-submit"><i class="fa fa-paper-plane-o"
-				aria-hidden="true"></i></button>
-	</div>
-
-</div>
-
-
-</div>
-
-<!--Chat-->
-
-
-
 <body>
-	<div id="preloader"></div>
-
-
-
-	<header class="header">
-
-		<!-- <a href="#home" class="active">Logo</a> -->
-		<a href="javascript:void(0);" class="icon" onclick="HideNavbar()">
-			<i class="fa fa-bars"></i>
-		</a>
-		<div class="navbar" id="navbar">
-
-			<a href="#linkAbout">About</a>
-			<a href="#linkProjects">Projects</a>
-			<a href="#linkContacts">Contacts</a>
-		</div>
-
-	</header>
-
-
-
-
-	<!-- Hello -->
-	<section class="hello" id="idHello">
-		<p>Hello</p>
-		<h1>I'm Konstantinas Ovčinikovas</h1>
-	</section>
-
-
-
-	<!-- About -->
-	<div class="linkAnchor" id="linkAbout">LinkAbout</div>
-
-	<section id="idAbout" class="fadeOutOnScroll appear-object">
-		<h1 id="titlelink" class="about-title">About me</h1>
-
-		<div class="about">
-
-			<img class="Photo" id="Check" src="img/ProfilePhoto.jpg" alt="No image">
-
-			<h3 class="subtitle">Hello I'm Konstantinas</h3>
-			<p class="text">
-				I am "AI systems" third year student at <a class="hiperlink"
-					href="https://vilniustech.lt">Vilniustech</a>. I took 3 year course of Back-end developer at <a
-					class="hiperlink" href="https://nkkm.lt">NKKM</a>. Gained basic programming knowledge of C++,
-				VisualBasic, created programs with Visual Studio on C#, managed databases on MySQL, built Android apps
-				using Glide. And made some games with Unity and Gamemaker.
-			</p>
-
-
-
-			<div class="socials">
-				<h3>Contact me</h3>
-				<a href="https://www.facebook.com/OvcinikovasKonstantinas" class="fa fa-facebook"></a>
-				<a href="https://www.linkedin.com/in/konstantinas-ovčinikovas-75a36b281/" class="fa fa-linkedin"></a>
-			</div>
-
-		</div>
-	</section>
-
-
-
-
-	<!-- Portfolio -->
-	<div class="linkAnchor" id="linkProjects">LinkProjects</div>
-	<section id="idProjects ">
-
-		<h1 class="projects-title fadeOutOnScroll appear-object" id="idProjectsTitle">My Projects</h1>
-
-
-
-		<!-- Project 1 Storage System-->
-		<div class="Portfolio2 fadeOutOnScroll appear-object" id="idProject1">
-
-			<h2 class="Name"><a>C++ Vehicle Storage</a></h2>
-			<p>
-				Storage system written on C++ for my course work. The system is designed to manage cars and motorcycles
-				in containers, and allows to modify the properties of each vehicle, such as the brand, model, engine
-				parameters, and cost. The main objective of the project was to learn object-oriented programming
-				concepts such as pointers, structures, and classes.
-			</p>
-			<a class="ViewProject"
-				href="https://drive.google.com/file/d/1IwbCrhAg82IaJAJycwJaqHPz6tjGepIy/view?usp=sharing">View
-				Project</a>
-
-
-			<video class="Photo" src="img/Projects/C++VehicleStorage.mp4" alt="Not loaded" autoplay muted controls
-				loop></video>
-		</div>
-
-
-
-		<!-- Project 2 Pacman-->
-		<div class="Portfolio fadeOutOnScroll appear-object" id="idProject2">
-
-			<video class="Photo" src="img/Projects/GameMakerPacman.mp4" alt="Not loaded" autoplay muted loop></video>
-
-			<h2 class="Name"><a>Pacman using Gamemaker</a></h2>
-			<p>
-				I created a clone of Pacman using <a class="hiperlink" href="https://gamemaker.io/en">Gamemaker</a>
-				while studying the basics of coding at NKKM courses. During this project, I gained an understanding of
-				how simple games are made and how collisions, hitboxes, movement, and gravity works.
-			</p>
-			<a class="ViewProject" href="https://github.com/cruetto/PortfolioProjects">View Project</a>
-		</div>
-
-
-
-		<!-- Project 3 Glide-->
-		<div class="Portfolio2 fadeOutOnScroll appear-object" id="idProject3">
-
-			<h2 class="Name"><a>Tracking app with Glide</a></h2>
-			<p>
-				This is a side project created on <a class="hiperlink" href="https://www.glideapps.com">Glide</a>, a
-				no-code platform. It’s a tracker for adding the number of exercises that the user completes every day.
-				This tracker can help users see their growth and continue training.
-			</p>
-			<a class="ViewProject" href="https://trackeo.glide.page">View Project</a>
-
-			<video class="Photo" src="img/Projects/GlideTrackeo.mp4" alt="Not loaded" autoplay muted controls
-				loop></video>
-
-		</div>
-
-
-
-		<!-- Project 4 Matlab-->
-
-
-		<div class="Portfolio fadeOutOnScroll appear-object" id="idProject4">
-
-			<input type="checkbox" name="" id="zoom_img">
-			<label for="zoom_img">
-				<img class="Photo" id="zoom" src="img/Projects/Matlab_Recognition.png" alt="Image not loaded">
-			</label>
-
-
-			<h2 class="Name"><a>Matlab Object recognition</a></h2>
-			<p>
-				One of many <a class="hiperlink" href="https://ch.mathworks.com/products/matlab.html">Matlab</a>
-				laboratory works in university. Main point was to research how already trained network classifies
-				objects on image. Where does network „looks“ and which features defines what is depicted.
-			</p>
-			<a class="ViewProject" href="https://github.com/cruetto/PortfolioProjects">View Project</a>
-		</div>
-
-
-
-		<!-- Project 5 CatFeeder-->
-		<div class="Portfolio2 fadeOutOnScroll appear-object" id="idProject5">
-
-			<h2 class="Name"><a>Automatic cat feeder</a></h2>
-			<img class="Photo" src="img/Projects/CatFeeder.png" alt="Image not loaded">
-
-			<p>
-				I designed an automatic feeder for pets. Structure was designed on <a class="hiperlink"
-					href="https://www.autodesk.com/products/autocad/overview?term=1-YEAR&tab=subscription">AutoCAD</a>
-				and 3D-printed. The mechanism was programmed using <a class="hiperlink"
-					href="https://www.arduino.cc">Arduino</a>. Working on this project presented many challenges, and I
-				had to use a lot of engineering ideas to find different solutions to make it work. Although it doesn’t
-				work perfectly, it was a valuable learning experience.
-			</p>
-
-			<a class="ViewProject" href="https://github.com/cruetto/PortfolioProjects">View Project</a>
-
-		</div>
-
-
-
-		<!-- Project 6 Portfolio-->
-		<div class="Portfolio fadeOutOnScroll appear-object" id="idProject6">
-
-			<img class="Photo" src="img/Projects/WebsitePortfolio.gif" alt="Image not loaded">
-			<h2 class="Name"><a>Website Portfolio</a></h2>
-			<p>
-				This website started as simple university laboratory work. But I decided to make it great as I can.
-				While improving this website I learned how to make beautiful things with CSS, Javascript and HTML, also
-				I became more close to github. I was using Visual Studio Code with “LiveServer” and “Github Codespaces”.
-				And it was cool experience.
-			</p>
-			<a class="ViewProject" href="https://github.com/cruetto/PortfolioWebsite">View Project</a>
-		</div>
-	</section>
-
-
-
-
-	<footer>
-		<!-- Contacts -->
-		<div class="linkAnchor" id="linkContacts">LinkContacts</div>
-		<div class="Contact fadeOutOnScroll appear-object" id="idContacts">
-			<div class="socials">
-				<h3>Contact Information</h3>
-
-				<p>Click to Copy</p>
-				<span class="info"
-					onclick="copyTextToClipboard('konstantinas.ovcinikovas@gmail.com', 'Email')">konstantinas.ovcinikovas@gmail.com</span>
-				<a class="info" href="tel:+37060140209">+37060140209</a>
-				<!-- <span onclick="copyTextToClipboard('+37060140209', 'Number')">+37060140209</span> -->
-
-
-
-				<a href="https://www.facebook.com/OvcinikovasKonstantinas" class="fa fa-facebook"></a>
-				<a href="https://www.linkedin.com/in/konstantinas-ovčinikovas-75a36b281/" class="fa fa-linkedin"></a>
-			</div>
-
-		</div>
-	</footer>
-
-
-
-	<script src="javascript/preloader.js"></script>
-
+    <!-- Background Squares -->
+    <div id="box1"></div>
+    <div id="box2"></div>
+
+    <div id="preloader"></div>
+
+    <header class="header">
+        <!-- Hamburger Button -->
+        <button type="button" class="icon navbar-toggle-button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navbar">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+            <a href="#linkAbout" data-lang-key="navAbout">About</a>
+            <a href="#linkProjects" data-lang-key="navProjects">Projects</a>
+            <a href="#linkContacts" data-lang-key="navContacts">Contacts</a>
+        </nav>
+
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <button class="lang-button" data-lang="en">EN</button>
+            <button class="lang-button" data-lang="lt">LT</button>
+        </div>
+
+    </header>
+
+    <!-- Hello Section -->
+    <section class="hello" id="idHello">
+        <h1 data-lang-key="helloName">Konstantinas Ovčinikovas</h1>
+        <p data-lang-key="helloSubtitle">AI Systems Student & Aspiring Developer</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="linkAbout" class="about-section idAbout fadeOutOnScroll appear-object">
+        <h2 class="about-title" data-lang-key="aboutTitle">About Me</h2>
+
+        <div class="about">
+            <img class="Photo" id="Check" src="img/ProfilePhoto.jpg" data-lang-key="aboutPhotoAlt" alt="Headshot photo of Konstantinas Ovčinikovas">
+
+            <h3 class="subtitle" data-lang-key="aboutGreeting">Hello!</h3>
+            <p class="text" data-lang-key="aboutText">
+                I am an "AI systems" third-year student at <a class="hyperlink" href="https://vilniustech.lt" target="_blank" rel="noopener noreferrer">Vilnius Tech</a>. I previously completed a 3-year course focused on Back-end development at <a class="hyperlink" href="https://nkkm.lt" target="_blank" rel="noopener noreferrer">NKKM</a>. Through my studies and projects, I've gained programming knowledge in C++, Visual Basic, C# (using Visual Studio), database management with MySQL, and built Android apps incorporating libraries like Glide. I've also explored game development using Unity and GameMaker.
+            </p>
+
+            <div class="socials">
+                <h3 data-lang-key="aboutConnect">Connect with Me</h3>
+                <a href="https://www.facebook.com/OvcinikovasKonstantinas" class="fa fa-facebook" aria-label="Facebook Profile" target="_blank" rel="noopener noreferrer"></a>
+                <a href="https://www.linkedin.com/in/konstantinas-ovčinikovas-75a36b281/" class="fa fa-linkedin" aria-label="LinkedIn Profile" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="linkProjects" class="projects-section idProjects">
+        <h2 class="projects-title fadeOutOnScroll appear-object" data-lang-key="projectsTitle">My Projects</h2>
+
+        <!-- Project 1 -->
+        <article class="Portfolio2 fadeOutOnScroll appear-object project-item" id="idProject1">
+            <h3 class="Name" data-lang-key="project1Name">C++ Vehicle Storage</h3>
+            <p data-lang-key="project1Desc">
+                A storage system written in C++ for a course project. The system manages cars and motorcycles in containers, allowing modification of vehicle properties (brand, model, engine, cost). Key OOP concepts practiced: pointers, structures, and classes.
+            </p>
+            <a class="ViewProject" href="https://drive.google.com/file/d/1IwbCrhAg82IaJAJycwJaqHPz6tjGepIy/view?usp=sharing" target="_blank" rel="noopener noreferrer" data-lang-key="project1Link">View Project Documentation</a>
+            <video class="Photo" src="img/Projects/C++VehicleStorage.mp4" autoplay muted controls loop poster="img/Projects/cpp_poster.jpg" data-lang-key="project1VideoAlt" aria-label="Demo video of C++ Vehicle Storage System UI"></video>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="Portfolio fadeOutOnScroll appear-object project-item" id="idProject2">
+            <video class="Photo" src="img/Projects/GameMakerPacman.mp4" autoplay muted loop poster="img/Projects/pacman_poster.jpg" data-lang-key="project2VideoAlt" aria-label="Gameplay video of Pacman clone"></video>
+            <h3 class="Name" data-lang-key="project2Name">Pacman Clone (GameMaker)</h3>
+            <p data-lang-key="project2Desc">
+                Created a Pacman clone using <a class="hyperlink" href="https://gamemaker.io/en" target="_blank" rel="noopener noreferrer">GameMaker</a> during foundational coding courses at NKKM. This project provided practical understanding of game loops, collision detection, hitboxes, movement mechanics, and sprite management.
+            </p>
+            <a class="ViewProject" href="https://github.com/cruetto/PortfolioProjects" target="_blank" rel="noopener noreferrer" data-lang-key="project2Link">View Code on GitHub</a>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="Portfolio2 fadeOutOnScroll appear-object project-item" id="idProject3">
+            <h3 class="Name" data-lang-key="project3Name">Exercise Tracker App (Glide)</h3>
+            <p data-lang-key="project3Desc">
+                A side project built using the no-code platform <a class="hyperlink" href="https://www.glideapps.com" target="_blank" rel="noopener noreferrer">Glide</a>. This app allows users to log daily exercise repetitions, visualize their progress, and stay motivated.
+            </p>
+            <a class="ViewProject" href="https://trackeo.glide.page" target="_blank" rel="noopener noreferrer" data-lang-key="project3Link">View Live App</a>
+            <video class="Photo" src="img/Projects/GlideTrackeo.mp4" autoplay muted controls loop poster="img/Projects/glide_poster.jpg" data-lang-key="project3VideoAlt" aria-label="Demo video of the Glide Exercise Tracker App"></video>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="Portfolio fadeOutOnScroll appear-object project-item" id="idProject4">
+            <input type="checkbox" id="zoom_img" class="zoom-checkbox" aria-label="Zoom Matlab Image">
+            <label for="zoom_img" class="zoom-label">
+                <img class="Photo" id="zoom" src="img/Projects/Matlab_Recognition.png" data-lang-key="project4ImageAlt" alt="Matlab image analysis showing object recognition heatmaps">
+            </label>
+            <h3 class="Name" data-lang-key="project4Name">MATLAB Object Recognition Analysis</h3>
+            <p data-lang-key="project4Desc">
+                Part of university laboratory work using <a class="hyperlink" href="https://ch.mathworks.com/products/matlab.html" target="_blank" rel="noopener noreferrer">MATLAB</a>. Investigated how a pre-trained neural network classifies objects within an image, focusing on identifying the image features the network uses for classification.
+            </p>
+            <a class="ViewProject" href="https://github.com/cruetto/PortfolioProjects" target="_blank" rel="noopener noreferrer" data-lang-key="project4Link">View Related Files on GitHub</a>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="Portfolio2 fadeOutOnScroll appear-object project-item" id="idProject5">
+             <img class="Photo" src="img/Projects/CatFeeder.png" data-lang-key="project5ImageAlt" alt="Photo of the assembled 3D-printed automatic cat feeder prototype">
+            <h3 class="Name" data-lang-key="project5Name">Automatic Cat Feeder (Arduino/CAD)</h3>
+            <p data-lang-key="project5Desc">
+                Designed and built an automatic pet feeder. The structure was designed in <a class="hyperlink" href="https://www.autodesk.com/products/autocad/overview?term=1-YEAR&tab=subscription" target="_blank" rel="noopener noreferrer">AutoCAD</a> and 3D-printed. The dispensing mechanism is controlled by an <a class="hyperlink" href="https://www.arduino.cc" target="_blank" rel="noopener noreferrer">Arduino</a> microcontroller. This project involved significant problem-solving and engineering challenges. While not perfect, it was a valuable hands-on learning experience.
+            </p>
+            <a class="ViewProject" href="https://github.com/cruetto/PortfolioProjects" target="_blank" rel="noopener noreferrer" data-lang-key="project5Link">View Code/Design Files on GitHub</a>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="Portfolio fadeOutOnScroll appear-object project-item" id="idProject6">
+            <img class="Photo" src="img/Projects/WebsitePortfolio.gif" data-lang-key="project6ImageAlt" alt="Animated GIF showing scrolling through this portfolio website">
+            <h3 class="Name" data-lang-key="project6Name">This Portfolio Website</h3>
+            <p data-lang-key="project6Desc">
+                Initially a simple university lab assignment, this website evolved into a personal project to practice and showcase web development skills. Built using HTML, CSS, and JavaScript, focusing on clean code, responsiveness, and subtle animations. Developed using VS Code, Live Server, and GitHub Pages/Codespaces.
+            </p>
+            <a class="ViewProject" href="https://github.com/cruetto/PortfolioWebsite" target="_blank" rel="noopener noreferrer" data-lang-key="project6Link">View Code on GitHub</a>
+        </article>
+
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="linkContacts" class="footer-section">
+        <address class="Contact fadeOutOnScroll appear-object" id="idContacts">
+            <div class="socials">
+                <h3 data-lang-key="contactTitle">Contact Information</h3>
+
+                <p data-lang-key="contactEmailInstruction">Click email to copy (or open mail app on mobile):</p>
+                <button type="button" class="info copy-button" id="email-button" data-copy-text="konstantinas.ovcinikovas@gmail.com" data-copy-name="Email">
+                    konstantinas.ovcinikovas@gmail.com
+                </button>
+
+                <p data-lang-key="contactPhoneInstruction">Click phone to copy (or call on mobile):</p>
+                <a class="info" id="phone-link" href="tel:+37060140209" data-phone-number="+37060140209">+370 601 40209</a>
+
+                <div class="social-links">
+                    <a href="https://www.facebook.com/OvcinikovasKonstantinas" class="fa fa-facebook" aria-label="Facebook Profile" target="_blank" rel="noopener noreferrer"></a>
+                    <a href="https://www.linkedin.com/in/konstantinas-ovčinikovas-75a36b281/" class="fa fa-linkedin" aria-label="LinkedIn Profile" target="_blank" rel="noopener noreferrer"></a>
+                </div>
+            </div>
+        </address>
+        <p class="footer-credit">© <span id="current-year"></span> Konstantinas Ovčinikovas. <span data-lang-key="footerRights">All rights reserved.</span></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="javascript/preloader.js"></script>
+    <script src="./javascript/main.js"></script>
 
 </body>
-
 </html>
-
-<!-- Add JS after to let html and CSS load -->
-<script type="module" src="./javascript/main.js"></script>
-<script type="module" src="./javascript/chat.js"></script>
-
-
-
-<!-- Created by Konstantinas Ovcinikovas -->

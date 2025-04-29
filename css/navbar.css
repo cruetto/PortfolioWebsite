@@ -1,101 +1,140 @@
 /*-------------------NavBar-start-------------------*/
-@media screen and (min-width: 1100px){
-.header{
-	position: fixed;
-	top: 0;
-	width: 100%;
-	padding: 10px;
-	background: #131313; 
-	display: block;
-	justify-content: space-between;
-	text-align: right;
-	z-index: 100;
 
-	box-shadow: 0 1px 20px #191919;
-}
-
-
-.navbar{
-	margin-right: 10%;
-}
-.navbar a{
-	
-	position: relative;
-	font-size: 19px;
-	color: var(--first-color);
-	font-weight: 550;
-	text-decoration: none;
-	margin-left: 20px;
-}
-.navbar a:hover{
-	color: white;
-	transition-property: all;
-	transition-duration: .3s;
-	transition-timing-function: ease-in-out;
-}
-
-.navbar a::before{
-	content: '';
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 0;
-	height: 2px;
-	background: var(--first-color);
-}
-.navbar a:hover::before{
-	width: 100%;
-	background: white;
-	transition-property: all;
-	transition-duration: .3s;
-	transition-timing-function: ease-in-out;
-}
-.header .icon {
-	display: none;
-}
-}
-
-
-@media screen and (max-width: 1100px){
-	/* Style the navigation menu */
+/* Common Header Styles */
 .header {
-	overflow: hidden;
-	position: fixed;
-	z-index: 900;
-	background-color: var(--background-color);
-	width: 100vw;
-}
-	
-	/* Hide the links inside the navigation menu (except for logo/home) */
-.header .navbar {
-	display: none;
-}
-
-/* Style navigation menu links */
-.header a {
-	color: var(--first-color);
-	padding: 14px 16px;
-	text-decoration: none;
-	font-size: 7vw;
-	display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(19, 19, 19, 0.9); /* Slightly transparent background */
+    backdrop-filter: blur(5px); /* Blur effect */
+    z-index: 100;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+    /* Use variable for height */
+    height: var(--header-height);
+    padding: 0 5%; /* Adjusted padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Style the hamburger menu */
-.header .icon {
-	width: 7vw;
-	height: 7vw;
-	color: var(--first-color);
-	display: block;
-	right: 0;
-	top: 0;
+/* Desktop Navigation */
+@media screen and (min-width: 1100px) {
+    nav.navbar { display: flex; gap: 25px; margin-right: auto; /* Push nav left */ padding-left: 30px;}
+    nav.navbar a {
+        position: relative;
+        font-size: 19px;
+        color: var(--first-color);
+        font-weight: 550;
+        text-decoration: none;
+        padding: 5px 0;
+        transition: color 0.3s ease-in-out;
+    }
+    nav.navbar a:hover { color: white; }
+    nav.navbar a::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--first-color);
+        transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    }
+    nav.navbar a:hover::before { width: 100%; background: white; }
+    .header .navbar-toggle-button { display: none; }
+
+    /* Language switcher position on desktop */
+    .language-switcher {
+        margin-left: 20px; /* Space between nav and switcher */
+    }
 }
 
-/* Add a grey background color on mouse-over */
-/* .header a:hover {
-	background-color: #ddd;
-} */
 
-/* Style the active link (or home/logo) */
+/* Mobile Navigation */
+@media screen and (max-width: 1099px) {
+    .header { padding: 0 5%; } /* Adjust padding */
+    .header .navbar-toggle-button {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--first-color);
+        font-size: 28px;
+        cursor: pointer;
+        padding: 5px;
+        line-height: 1;
+        z-index: 101; /* Ensure button is clickable */
+        order: 3; /* Place hamburger last */
+    }
+    .header .navbar-toggle-button:hover { color: white; }
 
+    /* Style the navigation menu container */
+    nav.navbar {
+        display: flex; /* Use flex for column layout */
+        flex-direction: column;
+        position: absolute;
+        top: var(--header-height); /* Position below the header */
+        left: 0;
+        width: 100%;
+        background-color: rgba(24, 24, 24, 0.95); /* Mobile nav background */
+        padding: 10px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        /* Hidden state */
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s;
+    }
+    nav.navbar.navbar--visible {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    nav.navbar a {
+        color: var(--first-color);
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+        text-align: center;
+        border-bottom: 1px solid var(--background-border-color);
+    }
+    nav.navbar a:last-child { border-bottom: none; }
+    nav.navbar a:hover { background-color: #252525; color: white; }
+
+    /* Language switcher position on mobile */
+     .language-switcher {
+         margin-left: auto; /* Push to right, before hamburger */
+         padding-right: 15px;
+         order: 2; /* Place before hamburger */
+     }
+}
+
+/* Language Switcher Styles (Common) */
+.language-switcher {
+    display: flex;
+    align-items: center; /* Align buttons vertically */
+    gap: 8px; /* Increased space */
+}
+.lang-button {
+    background: none;
+    border: 1px solid var(--first-color);
+    color: var(--first-color);
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 500; /* Slightly bolder */
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.lang-button:hover {
+    background-color: var(--first-color-dark);
+    color: white;
+}
+.lang-button.active {
+    background-color: var(--first-color);
+    color: white;
+    font-weight: bold;
 }
 /*-------------------NavBar-end-------------------*/
