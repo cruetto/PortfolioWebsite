@@ -10,12 +10,16 @@ address.Contact {
 address.Contact h3 {
     margin-bottom: 30px; /* Space below heading */
     font-size: 1.5em; /* Adjust heading size */
+    /* Ensure heading color uses variable */
+    color: var(--second-color);
+    transition: color var(--transition-speed) ease;
 }
 
 address.Contact p {
     font-size: 0.9em; /* Smaller text for instructions */
     color: var(--text-secondary-color);
     margin-bottom: 15px;
+    transition: color var(--transition-speed) ease;
 }
 
 /* Style for clickable elements (links and buttons) */
@@ -41,9 +45,11 @@ address.Contact button.copy-button {
     font-weight: bold; /* Make it look like a link */
 }
 
+/* --- CORRECTED HOVER RULE --- */
 address.Contact a.info:hover,
 address.Contact button.copy-button:hover {
-    color: white;
+    /* Use the primary text color variable which changes with theme */
+    color: var(--second-color);
     text-decoration: underline; /* Add underline on hover */
 }
 
@@ -58,19 +64,24 @@ address.Contact .social-links a.fa {
     font-size: 22px;
     width: 45px;
     height: 45px;
-    line-height: 25px;
+    line-height: 25px; /* Center icon vertically */
     text-align: center;
     text-decoration: none;
     margin: 5px 8px;
     border-radius: 50%;
-    background: #2a2a2a;
+    background: var(--button-bg-color);
     color: var(--first-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
 address.Contact .social-links a.fa:hover {
     background-color: var(--first-color);
-    color: white;
+    /* Use background color variable for icon text on hover for contrast */
+    color: var(--background-color);
+}
+/* Ensure icon text is readable in light theme on hover */
+body.light-theme address.Contact .social-links a.fa:hover {
+     color: var(--lt-background-color);
 }
 
 

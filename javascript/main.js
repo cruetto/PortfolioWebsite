@@ -2,7 +2,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Translations Dictionary ---
-    // *** PASTE YOUR COMPLETED LITHUANIAN TRANSLATIONS HERE ***
     const translations = {
         pageTitle: { en: "Konstantinas Ovčinikovas - Portfolio", lt: "Konstantinas Ovčinikovas - Portfolio" },
         navAbout: { en: "About", lt: "Apie mane" },
@@ -43,7 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
         contactTitle: { en: "Contact Information", lt: "Kontaktinė Informacija" },
         contactEmailInstruction: { en: "Click email to copy (or open mail app on mobile):", lt: "Spustelėkite el. paštą, kad nukopijuotumėte (arba atidarytumėte pašto programą mobiliajame):" },
         contactPhoneInstruction: { en: "Click phone to copy (or call on mobile):", lt: "Spustelėkite telefoną, kad nukopijuotumėte (arba skambintumėte mobiliajame):" },
-        footerRights: { en: "All rights reserved.", lt: "Visos teisės saugomos." }
+        footerRights: { en: "All rights reserved.", lt: "Visos teisės saugomos." },
+        // Translation for copy feedback
+        copiedFeedback: { en: "Copied!", lt: "Nukopijuota!" }
     };
 
     // --- Helper Function: Detect Mobile Device ---
@@ -51,15 +52,25 @@ document.addEventListener('DOMContentLoaded', () => {
         return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.maxTouchPoints && navigator.maxTouchPoints > 0);
     }
 
+    // --- Get Current Language ---
+    // Helper function to safely get the current language setting
+    function getCurrentLanguage() {
+        let lang = document.documentElement.lang || 'en';
+        if (lang !== 'en' && lang !== 'lt') {
+            lang = 'en'; // Default to English if invalid lang attribute found
+        }
+        return lang;
+    }
+
     // --- Language Setting Function ---
     function setLanguage(lang) {
         if (lang !== 'en' && lang !== 'lt') lang = 'en';
-        document.documentElement.lang = lang;
+        document.documentElement.lang = lang; // Set HTML lang attribute
         const elements = document.querySelectorAll('[data-lang-key]');
         elements.forEach(el => {
             const key = el.dataset.langKey;
             const translationData = translations[key];
-            if (translationData && translationData[lang]) {
+            if (translationData && translationData[lang] !== undefined) { // Check if translation exists
                 const translation = translationData[lang];
                 if (el.tagName === 'IMG' || el.tagName === 'VIDEO') {
                     if (el.hasAttribute('alt')) el.alt = translation;
@@ -67,12 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (el.tagName === 'TITLE') {
                     document.title = translation;
                 } else {
-                     if (el.querySelector('a')) el.innerHTML = translation;
+                     if (el.querySelector('a')) el.innerHTML = translation; // Use innerHTML if links are present
                      else el.textContent = translation;
                 }
             } else {
                 console.warn(`Translation key "${key}" or language "${lang}" not found.`);
-                if (translationData && translationData['en']) { // Fallback to EN
+                // Fallback to English if translation missing for the current language
+                if (translationData && translationData['en'] !== undefined) {
                      if (el.querySelector('a')) el.innerHTML = translationData['en'];
                      else el.textContent = translationData['en'];
                 }
@@ -81,8 +93,28 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.lang-button').forEach(button => {
             button.classList.toggle('active', button.dataset.lang === lang);
         });
-        try { localStorage.setItem('preferredLanguage', lang); } catch (e) { /* Ignore */ }
+        try { localStorage.setItem('preferredLanguage', lang); } catch (e) { console.warn("Could not save language preference.", e); }
     }
+
+    // --- Theme Setting Function ---
+    function setTheme(theme) {
+        const body = document.body;
+        const lightButton = document.querySelector('.theme-button[data-theme="light"]');
+        const darkButton = document.querySelector('.theme-button[data-theme="dark"]');
+
+        if (theme === 'light') {
+            body.classList.add('light-theme');
+            if (lightButton) lightButton.classList.add('active');
+            if (darkButton) darkButton.classList.remove('active');
+        } else {
+            body.classList.remove('light-theme');
+            if (lightButton) lightButton.classList.remove('active');
+            if (darkButton) darkButton.classList.add('active');
+            theme = 'dark'; // Ensure theme variable is 'dark' for saving
+        }
+        try { localStorage.setItem('preferredTheme', theme); } catch (e) { console.warn("Could not save theme preference.", e); }
+    }
+
 
     // --- Language Button Event Listeners ---
     const langButtons = document.querySelectorAll('.lang-button');
@@ -90,10 +122,30 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => setLanguage(button.dataset.lang));
     });
 
+    // --- Theme Button Event Listeners ---
+    const themeButtons = document.querySelectorAll('.theme-button');
+    themeButtons.forEach(button => {
+        button.addEventListener('click', () => setTheme(button.dataset.theme));
+    });
+
+
     // --- Initial Language Load ---
-    let currentLanguage = 'en';
-    try { const savedLang = localStorage.getItem('preferredLanguage'); if (savedLang === 'en' || savedLang === 'lt') currentLanguage = savedLang; } catch (e) { /* Ignore */ }
-    setLanguage(currentLanguage);
+    let initialLanguage = 'en';
+    try { const savedLang = localStorage.getItem('preferredLanguage'); if (savedLang === 'en' || savedLang === 'lt') initialLanguage = savedLang; } catch (e) { /* Ignore */ }
+    setLanguage(initialLanguage); // Apply language on load
+
+
+    // --- Initial Theme Load ---
+    let initialTheme = 'dark'; // Default theme
+    try {
+        const savedTheme = localStorage.getItem('preferredTheme');
+        if (savedTheme === 'light' || savedTheme === 'dark') {
+            initialTheme = savedTheme;
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            initialTheme = 'light'; // Use OS preference if no saved theme
+        }
+    } catch (e) { console.warn("Could not read theme preference.", e); }
+    setTheme(initialTheme); // Apply theme on load
 
 
     // --- Navbar Toggle ---
@@ -107,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- Copy to Clipboard (with visual feedback) ---
+    // --- Copy to Clipboard (with visual feedback & translation) ---
     function copyTextToClipboard(textToCopy, nameOfObject, clickedElement) {
         if (!textToCopy) return;
         if (navigator.clipboard && window.isSecureContext) {
@@ -115,17 +167,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(() => {
                     if (clickedElement) {
                         const originalText = clickedElement.textContent;
-                        // TODO: Translate "Copied!"
-                        clickedElement.textContent = 'Copied!';
+                        const currentLang = getCurrentLanguage(); // Get current language
+                        const copiedText = translations.copiedFeedback?.[currentLang] || translations.copiedFeedback?.['en'] || 'Copied!'; // Get translated text or fallback
+
+                        clickedElement.textContent = copiedText; // Show translated feedback
                         clickedElement.style.opacity = '0.7';
                         setTimeout(() => {
-                            if (clickedElement.textContent === 'Copied!') clickedElement.textContent = originalText;
+                            // Only revert if the text is still the "Copied!" message
+                            // This prevents reverting if the language was switched during the timeout
+                            const stillCopiedText = translations.copiedFeedback?.[getCurrentLanguage()] || translations.copiedFeedback?.['en'] || 'Copied!';
+                            if (clickedElement.textContent === stillCopiedText) {
+                                clickedElement.textContent = originalText;
+                            }
                             clickedElement.style.opacity = '1';
                         }, 1500);
                     }
                 })
-                .catch(err => console.error(`Copy failed: `, err));
-        } else { alert("Copying not supported/allowed in this context."); }
+                .catch(err => {
+                    console.error(`Copy failed: `, err);
+                    alert("Copying failed. Please try again."); // Simple error alert
+                });
+        } else {
+            alert("Copying not supported/allowed in this context.");
+        }
     }
 
     // --- Email Button Logic ---
@@ -147,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const phoneNumber = phoneLink.getAttribute('data-phone-number');
                 if (phoneNumber) copyTextToClipboard(phoneNumber, 'Phone Number', phoneLink);
             }
+            // On mobile, default 'tel:' behavior is allowed
         });
     }
 
@@ -157,6 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add(animationClassName);
+            // else entry.target.classList.remove(animationClassName); // Optional: remove if scrolls out
         });
     }, { threshold: 0.1 });
     const elementsToObserve = document.querySelectorAll('.' + appearClassName);
@@ -179,10 +245,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const parallaxRatio = -0.45; // Speed
         let translate = centerDifference * parallaxRatio;
 
-        // *** CLAMPING TO PREVENT OVERLAP ***
+        // *** ADJUSTED CLAMPING TO PREVENT OVERLAP ***
         // Limit how far UP the image can move (negative translate)
-        const maxMoveUp = -200; // Pixels. Adjust 0, -20, -50 etc. Prevents moving too far up.
-        const maxMoveDown = 200; // Optional: Limit downward movement too
+        const maxMoveUp = -200; // Pixels. Try -50, -80, -120 etc. to find the best value
+        const maxMoveDown = 200; // Limit downward movement (optional)
         translate = clamp(maxMoveUp, maxMoveDown, translate);
 
         element.style.transform = `translate3d(0, ${translate}px, 0)`;

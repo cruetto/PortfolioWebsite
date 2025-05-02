@@ -5,7 +5,8 @@
     text-align: center;
     font-size: 2.2em;
     /* *** ADDED MARGIN BOTTOM TO PUSH FIRST PROJECT DOWN *** */
-    margin-bottom: 12vh; /* Space between title and first project article */
+    margin-top: 45vh; /* Space above title */
+    margin-bottom: 15vh; /* Space between title and first project article */
 }
 
 /* Common Project Item Styles */
@@ -45,13 +46,15 @@ article.Portfolio2 p {
     font-size: 1em; color: var(--first-color); text-decoration: none;
     font-weight: bold; padding-bottom: 3px; transition: color 0.3s ease-in-out;
 }
-.ViewProject:hover { color: white; }
+.ViewProject:hover { color: var(--second-color); }
+body.light-theme .ViewProject:hover { color: var(--lt-second-color); } /* Accent color in light mode */
 .ViewProject::before {
     content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
     background: var(--first-color);
     transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
-.ViewProject:hover::before { width: 100%; background: white; }
+.ViewProject:hover::before { width: 100%; background: var(--second-color); }
+body.light-theme .ViewProject:hover::before { background: var(--lt-second-color); } /* Light mode background color */
 
 /* Common Media Styles (Image/Video) */
 article.Portfolio .Photo,
@@ -102,7 +105,7 @@ input[type=checkbox].zoom-checkbox:checked ~ label.zoom-label > img {
     }
      article.Portfolio:last-of-type,
      article.Portfolio2:last-of-type {
-         margin-bottom: 15vh;
+         margin-bottom: 45vh;
      }
 
     article.Portfolio h3.Name, article.Portfolio2 h3.Name { order: 1; font-size: 1.4em; text-align: center; margin-bottom: 10px; }
@@ -110,7 +113,7 @@ input[type=checkbox].zoom-checkbox:checked ~ label.zoom-label > img {
     article.Portfolio .ViewProject, article.Portfolio2 .ViewProject { order: 3; font-size: 1em; margin: 0 auto 30px auto; }
     article.Portfolio .Photo, article.Portfolio2 .Photo { order: 4; width: 90%; max-width: 450px; margin: 0 auto; max-height: 60vh; }
 
-    #idProject5 { /* Special cases if needed */ }
-    #idProject5 .Photo { /* Custom styles if needed */ }
+    /* #idProject5 { Special cases if needed } */
+    /* #idProject5 .Photo { Custom styles if needed } */
 }
 /*-------------------Projects-end-------------------*/

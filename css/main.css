@@ -9,7 +9,6 @@
     position: fixed;
     z-index: 1000;
 }
-/*-------------------Preloader-end-------------------*/
 
 * {
     margin: 0;
@@ -18,111 +17,174 @@
 }
 
 :root {
-    --first-color: #008f00;
+    /* --- Dark Theme (Default) --- */
+    --first-color: #008f00; /* Green */
     --first-color-dark: #007900;
-    --second-color: white;
-    --background-color: #101010;
-    --background-border-color: #272727;
-    --text-secondary-color: #b6b8b9;
-    --header-height: 70px; /* Define header height variable */
-}
+    --second-color: white; /* Primary Text */
+    --background-color: #101010; /* Main Background */
+    --background-secondary-color: #1b1b1b; /* Slightly lighter bg */
+    --background-header-color: rgba(19, 19, 19, 0.95); /* Header bg */
+    --background-border-color: #272727; /* Borders */
+    --text-secondary-color: #b6b8b9; /* Grey text */
+    --shadow-color: rgba(0, 0, 0, 0.5); /* Shadow color */
+    --button-bg-color: #2a2a2a; /* Button background */
 
-html {
-    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    /* --- Light Theme --- */
+    --lt-first-color: #0056b3; /* Blue */
+    --lt-first-color-dark: #004494;
+    --lt-second-color: #222222; /* Primary Text */
+    --lt-background-color: #ffffff; /* Main Background */
+    --lt-background-secondary-color: #f8f8f8; /* Slightly darker bg */
+    --lt-background-header-color: rgba(253, 253, 253, 0.95); /* Header bg */
+    --lt-background-border-color: #dddddd; /* Borders */
+    --lt-text-secondary-color: #353535; /* Grey text */
+    --lt-shadow-color: rgba(0, 0, 0, 0.1); /* Lighter Shadow */
+    --lt-button-bg-color: #f0f0f0; /* Button background */
+
+    /* --- Common --- */
+    --max-device-width: 1100px;
+    --transition-speed: 0.3s; /* For theme transitions */
 }
 
 body {
     font-family: 'Courier New', Courier, monospace, Arial, sans-serif;
     font-size: 25px;
-    color: #ffffff;
+    /* Default to dark theme variables */
+    color: var(--second-color);
     background-color: var(--background-color);
     line-height: 1.6;
+    /* Add transitions for smooth theme change */
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
-/* Disable horizontal scrolling */
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+/* Apply light theme variables when class is present */
+body.light-theme {
+    --first-color: var(--lt-first-color);
+    --first-color-dark: var(--lt-first-color-dark);
+    --second-color: var(--lt-second-color);
+    --background-color: var(--lt-background-color);
+    --background-secondary-color: var(--lt-background-secondary-color);
+    --background-header-color: var(--lt-background-header-color);
+    --background-border-color: var(--lt-background-border-color);
+    --text-secondary-color: var(--lt-text-secondary-color);
+    --shadow-color: var(--lt-shadow-color);
+    --button-bg-color: var(--lt-button-bg-color);
 }
+
+
+html, body { max-width: 100%; overflow-x: hidden; }
 
 p {
     color: var(--text-secondary-color);
+    transition: color var(--transition-speed) ease;
 }
 
 /* Background squares */
-#box1 {
-    position: fixed; right: -5%; bottom: 0%; z-index: -100;
-    width: 600px; height: 600px; transform: rotate(37deg);
-    border: ridge 1px; border-color: var(--background-border-color);
-    opacity: 0.4; pointer-events: none;
+#box1, #box2 {
+    position: fixed;
+    z-index: -100;
+    border: ridge 1px;
+    border-color: var(--background-border-color);
+    opacity: 0.5;
+    pointer-events: none;
+    transition: border-color var(--transition-speed) ease, opacity var(--transition-speed) ease;
 }
-#box2 {
-    position: fixed; top: 10%; left: 5%; z-index: -100;
-    width: 400px; height: 400px; transform: rotate(15deg);
-    border: groove 1px; border-color: var(--background-border-color);
-    opacity: 0.4; pointer-events: none;
-}
-@media screen and (max-width: 600px) { #box1, #box2 { opacity: 0.2; } }
+#box1 { right: -5%; bottom: 0%; width: 600px; height: 600px; transform: rotate(37deg); }
+#box2 { top: 10%; left: 5%; width: 400px; height: 400px; transform: rotate(15deg); }
 
-
-/* Add space above scroll targets to account for fixed header */
-#linkAbout,
-#linkProjects,
-#linkContacts {
-    scroll-margin-top: calc(var(--header-height) + 20px); /* Add extra 20px buffer */
+body.light-theme #box1,
+body.light-theme #box2 {
+    opacity: 0.2; /* Make boxes fainter in light mode */
 }
 
-/* Add significant spacing between major sections */
-.about-section,
-.projects-section,
-.footer-section {
-    margin-top: 15vh; /* Default space above sections */
-    padding-top: 5vh; /* Internal padding */
+@media screen and (max-width: 600px) {
+    #box1, #box2 { opacity: 0.3; }
+    body.light-theme #box1, body.light-theme #box2 { opacity: 0.1; }
 }
-/* Increase space specifically ABOVE Projects section */
-.projects-section {
-    /* *** INCREASED MARGIN TOP *** */
-    margin-top: 25vh; /* More space between About and Projects */
+
+
+/* Scroll target offset */
+#linkAbout, #linkProjects, #linkContacts {
+    scroll-margin-top: 70px; /* ADJUST value if header height changes */
 }
 
 
 .hyperlink {
-    text-decoration: none; color: var(--first-color); font-weight: bold;
+    text-decoration: none;
+    color: var(--first-color);
+    font-weight: bold;
+    transition: color var(--transition-speed) ease;
 }
-.hyperlink:hover { text-decoration: underline; color: var(--second-color); }
+.hyperlink:hover {
+    text-decoration: underline;
+    color: var(--first-color-dark); /* Use darker shade on hover */
+}
+body.light-theme .hyperlink:hover {
+    color: var(--lt-second-color); /* Darker text on hover in light mode */
+}
+
 
 /* Video controls cleanup */
-video::-webkit-media-controls-volume-slider,
+video::-webkit-media-controls-volume-slider { display: none; }
 video::-webkit-media-controls-mute-button { display: none; }
+
+
+/* Basic Footer Styling */
+footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--background-border-color);
+    margin-top: 100px;
+    transition: border-color var(--transition-speed) ease;
+}
+.footer-credit {
+    text-align: center;
+    color: var(--text-secondary-color);
+    font-size: 16px;
+    margin-top: 40px;
+}
+
+/* Responsive base font size */
+@media screen and (max-width: 1100px) { body { font-size: 18px; } }
+@media screen and (max-width: 600px) { body { font-size: 16px; } }
+
+
+/* main.css */
 
 /*-------------------Appear Animation-start-------------------*/
 @keyframes appear {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+	from {
+		opacity: 0; /* Start fully transparent */
+		transform: translateY(20px); /* Start slightly lower */
+	}
+	to {
+		opacity: 1; /* End fully opaque */
+		transform: translateY(0); /* End at original position */
+	}
 }
-.appear-animation { animation: appear 1s ease-out forwards; }
-.appear-object { opacity: 0; }
+
+/* Class added to elements that should have the animation triggered by JS */
+.appear-object {
+	opacity: 0; /* Start hidden before animation triggers */
+	/* You can add will-change for potential performance hint, but use sparingly */
+	/* will-change: opacity, transform; */
+}
+
+/* Class added by JavaScript (IntersectionObserver) to start the animation */
+.appear-animation {
+    animation-name: appear;
+    animation-duration: 1s; /* Duration of the animation */
+    animation-timing-function: ease-out; /* Animation speed curve */
+    animation-fill-mode: forwards; /* Keep the element visible (opacity: 1) after animation */
+    animation-iteration-count: 1; /* Play animation only once */
+}
+
+/* Respect user preference for reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .appear-object, .appear-animation { animation: none; opacity: 1; }
+  .appear-object,
+  .appear-animation {
+    animation: none; /* Disable animation */
+    opacity: 1; /* Show elements immediately if motion is reduced */
+    transform: none; /* Reset any transform */
+  }
 }
 /*-------------------Appear Animation-end-------------------*/
-
-/* Basic Footer Styling */
-footer { /* Now uses .footer-section class for spacing */
-    padding: 40px 0;
-    border-top: 1px solid var(--background-border-color);
-}
-.footer-credit {
-    text-align: center; color: var(--text-secondary-color);
-    font-size: 16px; margin-top: 40px;
-}
-
-/* Responsive base font size & header height */
-@media screen and (max-width: 1100px) {
-    body { font-size: 18px; }
-    :root { --header-height: 60px; }
-}
-@media screen and (max-width: 600px) {
-    body { font-size: 16px; }
-     :root { --header-height: 55px; }
-}

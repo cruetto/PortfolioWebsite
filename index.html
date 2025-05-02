@@ -17,8 +17,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Changed title to be set by JS -->
-    <title data-lang-key="pageTitle">Konstantinas Ovčinikovas - Portfolio</title>
-    <link rel="icon" href="img/favicon.ico"> <!-- Add a link to your favicon -->
+    <title data-lang-key="pageTitle">PortfolioWebsite</title>
+
+
+    <!-- Favicon Links -->
+    <link rel="icon" href="/favicon.ico" sizes="any"> <!-- Favicon.ico in root -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png"> <!-- Example path -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png"> <!-- Example path -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png"> <!-- Example path -->
+    <!-- Optional Manifest for Android -->
+    <link rel="manifest" href="/img/icons/site.webmanifest">
+
+    
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of Konstantinas Ovčinikovas, an AI Systems student showcasing projects in C++, Arduino, web development, and more.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Konstantinas Ovčinikovas - Portfolio">
+    <meta property="og:description" content="AI Systems student portfolio showcasing web development projects in C++, Arduino, GameMaker, MATLAB, and web technologies.">
+    <!-- *** REPLACE THIS URL with the actual public URL to your preview image *** -->
+    <meta property="og:image" content="https://cruetto.github.io/PortfolioWebsite/img/ProfilePhoto.jpg"> <!-- Example using your profile photo -->
+    <meta property="og:url" content="https://cruetto.github.io/PortfolioWebsite/">
+    <meta property="og:type" content="website">
+    <!-- Optional: Specify locale if desired -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="lt_LT">
+
+    <!-- Twitter Card (Optional but recommended) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Twitter will often use OG tags as fallback, but you can be specific -->
+    <!-- <meta name="twitter:title" content="Konstantinas Ovčinikovas - Portfolio"> -->
+    <!-- <meta name="twitter:description" content="AI Systems student portfolio..."> -->
+    <!-- <meta name="twitter:image" content="https://cruetto.github.io/PortfolioWebsite/img/ProfilePhoto.jpg"> -->
 
 </head>
 
@@ -29,6 +60,7 @@
 
     <div id="preloader"></div>
 
+          
     <header class="header">
         <!-- Hamburger Button -->
         <button type="button" class="icon navbar-toggle-button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navbar">
@@ -42,13 +74,23 @@
             <a href="#linkContacts" data-lang-key="navContacts">Contacts</a>
         </nav>
 
-        <!-- Language Switcher -->
-        <div class="language-switcher">
-            <button class="lang-button" data-lang="en">EN</button>
-            <button class="lang-button" data-lang="lt">LT</button>
+        <!-- Controls Wrapper -->
+        <div class="header-controls">
+            <!-- Language Switcher -->
+            <div class="language-switcher">
+                <button class="lang-button" data-lang="en">EN</button>
+                <button class="lang-button" data-lang="lt">LT</button>
+            </div>
+            <!-- Theme Switcher -->
+            <div class="theme-switcher">
+                <button class="theme-button" data-theme="light" aria-label="Switch to light theme">☀️</button> <!-- Sun icon -->
+                <button class="theme-button" data-theme="dark" aria-label="Switch to dark theme">🌙</button> <!-- Moon icon -->
+            </div>
         </div>
 
     </header>
+
+
 
     <!-- Hello Section -->
     <section class="hello" id="idHello">
@@ -87,12 +129,12 @@
                 A storage system written in C++ for a course project. The system manages cars and motorcycles in containers, allowing modification of vehicle properties (brand, model, engine, cost). Key OOP concepts practiced: pointers, structures, and classes.
             </p>
             <a class="ViewProject" href="https://drive.google.com/file/d/1IwbCrhAg82IaJAJycwJaqHPz6tjGepIy/view?usp=sharing" target="_blank" rel="noopener noreferrer" data-lang-key="project1Link">View Project Documentation</a>
-            <video class="Photo" src="img/Projects/C++VehicleStorage.mp4" autoplay muted controls loop poster="img/Projects/cpp_poster.jpg" data-lang-key="project1VideoAlt" aria-label="Demo video of C++ Vehicle Storage System UI"></video>
+            <video class="Photo" src="img/Projects/C++VehicleStorage.mp4" autoplay muted controls loop poster="img/Projects/cpp_poster.jpg" data-lang-key="project1VideoAlt" aria-label="Demo video of C++ Vehicle Storage System UI" loading="lazy"></video>
         </article>
 
         <!-- Project 2 -->
         <article class="Portfolio fadeOutOnScroll appear-object project-item" id="idProject2">
-            <video class="Photo" src="img/Projects/GameMakerPacman.mp4" autoplay muted loop poster="img/Projects/pacman_poster.jpg" data-lang-key="project2VideoAlt" aria-label="Gameplay video of Pacman clone"></video>
+            <video class="Photo" src="img/Projects/GameMakerPacman.mp4" autoplay muted loop poster="img/Projects/pacman_poster.jpg" data-lang-key="project2VideoAlt" aria-label="Gameplay video of Pacman clone" loading="lazy"></video>
             <h3 class="Name" data-lang-key="project2Name">Pacman Clone (GameMaker)</h3>
             <p data-lang-key="project2Desc">
                 Created a Pacman clone using <a class="hyperlink" href="https://gamemaker.io/en" target="_blank" rel="noopener noreferrer">GameMaker</a> during foundational coding courses at NKKM. This project provided practical understanding of game loops, collision detection, hitboxes, movement mechanics, and sprite management.
@@ -107,14 +149,14 @@
                 A side project built using the no-code platform <a class="hyperlink" href="https://www.glideapps.com" target="_blank" rel="noopener noreferrer">Glide</a>. This app allows users to log daily exercise repetitions, visualize their progress, and stay motivated.
             </p>
             <a class="ViewProject" href="https://trackeo.glide.page" target="_blank" rel="noopener noreferrer" data-lang-key="project3Link">View Live App</a>
-            <video class="Photo" src="img/Projects/GlideTrackeo.mp4" autoplay muted controls loop poster="img/Projects/glide_poster.jpg" data-lang-key="project3VideoAlt" aria-label="Demo video of the Glide Exercise Tracker App"></video>
+            <video class="Photo" src="img/Projects/GlideTrackeo.mp4" autoplay muted controls loop poster="img/Projects/glide_poster.jpg" data-lang-key="project3VideoAlt" aria-label="Demo video of the Glide Exercise Tracker App" loading="lazy"></video>
         </article>
 
         <!-- Project 4 -->
         <article class="Portfolio fadeOutOnScroll appear-object project-item" id="idProject4">
             <input type="checkbox" id="zoom_img" class="zoom-checkbox" aria-label="Zoom Matlab Image">
             <label for="zoom_img" class="zoom-label">
-                <img class="Photo" id="zoom" src="img/Projects/Matlab_Recognition.png" data-lang-key="project4ImageAlt" alt="Matlab image analysis showing object recognition heatmaps">
+                <img class="Photo" id="zoom" src="img/Projects/Matlab_Recognition.png" data-lang-key="project4ImageAlt" alt="Matlab image analysis showing object recognition heatmaps" loading="lazy">
             </label>
             <h3 class="Name" data-lang-key="project4Name">MATLAB Object Recognition Analysis</h3>
             <p data-lang-key="project4Desc">
@@ -125,7 +167,7 @@
 
         <!-- Project 5 -->
         <article class="Portfolio2 fadeOutOnScroll appear-object project-item" id="idProject5">
-             <img class="Photo" src="img/Projects/CatFeeder.png" data-lang-key="project5ImageAlt" alt="Photo of the assembled 3D-printed automatic cat feeder prototype">
+             <img class="Photo" src="img/Projects/CatFeeder.png" data-lang-key="project5ImageAlt" alt="Photo of the assembled 3D-printed automatic cat feeder prototype" loading="lazy">
             <h3 class="Name" data-lang-key="project5Name">Automatic Cat Feeder (Arduino/CAD)</h3>
             <p data-lang-key="project5Desc">
                 Designed and built an automatic pet feeder. The structure was designed in <a class="hyperlink" href="https://www.autodesk.com/products/autocad/overview?term=1-YEAR&tab=subscription" target="_blank" rel="noopener noreferrer">AutoCAD</a> and 3D-printed. The dispensing mechanism is controlled by an <a class="hyperlink" href="https://www.arduino.cc" target="_blank" rel="noopener noreferrer">Arduino</a> microcontroller. This project involved significant problem-solving and engineering challenges. While not perfect, it was a valuable hands-on learning experience.
@@ -135,7 +177,7 @@
 
         <!-- Project 6 -->
         <article class="Portfolio fadeOutOnScroll appear-object project-item" id="idProject6">
-            <img class="Photo" src="img/Projects/WebsitePortfolio.gif" data-lang-key="project6ImageAlt" alt="Animated GIF showing scrolling through this portfolio website">
+            <img class="Photo" src="img/Projects/WebsitePortfolio.gif" data-lang-key="project6ImageAlt" alt="Animated GIF showing scrolling through this portfolio website" loading="lazy">
             <h3 class="Name" data-lang-key="project6Name">This Portfolio Website</h3>
             <p data-lang-key="project6Desc">
                 Initially a simple university lab assignment, this website evolved into a personal project to practice and showcase web development skills. Built using HTML, CSS, and JavaScript, focusing on clean code, responsiveness, and subtle animations. Developed using VS Code, Live Server, and GitHub Pages/Codespaces.
