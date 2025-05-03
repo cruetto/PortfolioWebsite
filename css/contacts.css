@@ -76,12 +76,12 @@ address.Contact .social-links a.fa {
 
 address.Contact .social-links a.fa:hover {
     background-color: var(--first-color);
-    /* Use background color variable for icon text on hover for contrast */
     color: var(--background-color);
 }
 /* Ensure icon text is readable in light theme on hover */
 body.light-theme address.Contact .social-links a.fa:hover {
-     color: var(--lt-background-color);
+    background-color: var(--lt-first-color);
+    color: var(--lt-background-color);
 }
 
 

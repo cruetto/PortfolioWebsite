@@ -236,6 +236,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function moveElementOnScroll(element) {
         if (!element) return;
+
+
+        const windowWidth = window.innerWidth;
+        // *** MATCH THIS THRESHOLD TO YOUR CSS BREAKPOINT ***
+        const parallaxThreshold = 1100;
+
+        // --- Disable parallax on narrow screens/mobile ---
+        if (windowWidth < parallaxThreshold) {
+            // Reset transform if window is too narrow or on mobile
+            if (element.style.transform !== 'translate3d(0px, 0px, 0px)') { // Avoid unnecessary style changes
+                 element.style.transform = 'translate3d(0, 0, 0)';
+            }
+            return; // Stop processing parallax for this element
+        }
+
         const elementRect = element.getBoundingClientRect();
         const elementHeight = element.offsetHeight;
         const windowHeight = window.innerHeight;
@@ -253,6 +268,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         element.style.transform = `translate3d(0, ${translate}px, 0)`;
     }
+
+
+
 
     const photosToMove = document.querySelectorAll('.Photo');
     const elementsToFade = document.querySelectorAll('.fadeOutOnScroll'); // Keep if fade effect is wanted
