@@ -4,7 +4,6 @@
 .projects-title {
     text-align: center;
     font-size: 2.2em;
-    /* *** ADDED MARGIN BOTTOM TO PUSH FIRST PROJECT DOWN *** */
     margin-top: 45vh; /* Space above title */
     margin-bottom: 15vh; /* Space between title and first project article */
 }
@@ -14,9 +13,8 @@ article.Portfolio,
 article.Portfolio2 {
     margin-left: auto;
     margin-right: auto;
-    /* *** USER SET MARGIN BOTTOM *** */
     margin-bottom: 40vh; /* Space between projects */
-    max-width: 1400px;
+    max-width: 1850px;
     padding: 0 5%;
 }
 /* Ensure last project doesn't have excessive margin */
@@ -99,8 +97,6 @@ input[type=checkbox].zoom-checkbox:checked ~ label.zoom-label > img {
     article.Portfolio,
     article.Portfolio2 {
         display: flex; flex-direction: column;
-        /* *** USER SET MARGIN BOTTOM (Applied via non-media query rule) *** */
-        /* margin-bottom: 25vh; */ /* Example mobile value if different needed */
         padding: 0 5%;
     }
      article.Portfolio:last-of-type,

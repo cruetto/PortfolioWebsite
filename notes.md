@@ -1,4 +1,5 @@
 TTODO:
+    [] Lightmode preloader
 
     [] Project's pages with detailed information
     

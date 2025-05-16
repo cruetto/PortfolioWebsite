@@ -131,6 +131,57 @@ body.light-theme .hyperlink:hover {
 video::-webkit-media-controls-volume-slider { display: none; }
 video::-webkit-media-controls-mute-button { display: none; }
 
+video {
+    object-fit: contain; /* This is the key line */
+    /* Add any other video styles you have here, like width, height, etc. */
+    width: 100%; /* Make sure it takes up available width normally */
+    height: auto; /* Maintain aspect ratio normally */
+    display: block; /* Often useful for videos */
+}
+
+/* Standard pseudo-class */
+video:fullscreen {
+  width: 100% !important; /* Make sure it takes full width */
+  height: 100% !important; /* Make sure it takes full height */
+  object-fit: contain !important; /* Ensure this is applied */
+  box-sizing: border-box !important; /* Ensure padding/border don't push it */
+  padding: 0 !important; /* Remove any potential padding */
+  margin: 0 !important; /* Remove any potential margin */
+  /* You might also try positioning if needed, but usually not for fullscreen */
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+
+/* Vendor prefixes for broader compatibility */
+video:-webkit-full-screen { /* For Chrome, Safari */
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  box-sizing: border-box !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+
+video:-moz-full-screen { /* For Firefox */
+   width: 100% !important;
+   height: 100% !important;
+   object-fit: contain !important;
+   box-sizing: border-box !important;
+   padding: 0 !important;
+   margin: 0 !important;
+   top: 0 !important;
+   left: 0 !important;
+   right: 0 !important;
+   bottom: 0 !important;
+}
+
+
 
 /* Basic Footer Styling */
 footer {
