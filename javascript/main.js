@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hobby1: { en: " Climbing/Bouldering", lt: " Laipiojimas/Boulderingas" },
         hobby2: { en: " Riding a Bike", lt: " Važiavimas Dviračiu" },
         hobby3: { en: " Winter Swimming", lt: " Žiemos maudynės" },
-        
+        hobby4: { en: " Chess", lt: " Šachmatai" },
 
         aboutConnect: { en: "Connect with Me", lt: "Susisiekite" },
         projectsTitle: { en: "My Projects", lt: "Mano Projektai" },
