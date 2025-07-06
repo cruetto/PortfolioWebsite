@@ -57,7 +57,10 @@ body.light-theme .ViewProject:hover::before { background: var(--lt-second-color)
 /* Common Media Styles (Image/Video) */
 article.Portfolio .Photo,
 article.Portfolio2 .Photo {
-    width: 100%; height: auto; max-height: 70vh; border-radius: 8px;
+    width: 100%; 
+    height: auto; 
+    /* max-height: 70vh;  */
+    border-radius: 8px;
     display: block; object-fit: cover; /* Or contain */
     /* Parallax transform applied by JS */
 }

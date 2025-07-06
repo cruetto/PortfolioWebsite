@@ -37,7 +37,7 @@
     --lt-background-secondary-color: #f8f8f8; /* Slightly darker bg */
     --lt-background-header-color: rgba(253, 253, 253, 0.95); /* Header bg */
     --lt-background-border-color: #dddddd; /* Borders */
-    --lt-text-secondary-color: #353535; /* Grey text */
+    --lt-text-secondary-color: #000000; /* Grey text */
     --lt-shadow-color: rgba(0, 0, 0, 0.1); /* Lighter Shadow */
     --lt-button-bg-color: #f0f0f0; /* Button background */
 
