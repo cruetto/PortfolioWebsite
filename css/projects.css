@@ -39,7 +39,8 @@ article.Portfolio2 p {
 }
 
 /* Common View Project Link */
-.ViewProject {
+.ViewProject,
+.ViewProject2 {
     position: relative; display: inline-block; width: max-content;
     font-size: 1em; color: var(--first-color); text-decoration: none;
     font-weight: bold; padding-bottom: 3px; transition: color 0.3s ease-in-out;

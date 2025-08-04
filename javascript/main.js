@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         project1Name: { en: "C++ Vehicle Storage", lt: "C++ Transporto Priemonių Saugykla" },
         project1Desc: { en: "A storage system written in C++ for a course project. The system manages cars and motorcycles in containers, allowing modification of vehicle properties (brand, model, engine, cost). Key OOP concepts practiced: pointers, structures, and classes.", lt: "Saugyklos sistema parašyta C++ kalba kursiniam darbui. Sistema valdo automobilius ir motociklus konteineriuose, leidžia keisti kiekvienos transporto priemonės savybes (markę, modelį, variklio parametrus, kainą). Praktikuotos pagrindinės OOP koncepcijos: rodyklės, struktūros ir klasės." },
         project1Link: { en: "View Project Documentation", lt: "Peržiūrėti Projekto Dokumentaciją" },
+        project1Link2: { en: "Open for public", lt: "Peržiūrėti svetainę" },
         project1VideoAlt: { en: "Demo video of C++ Vehicle Storage System UI", lt: "C++ Transporto Priemonių Saugyklos Sistemos UI demonstracinis vaizdo įrašas" },
         
         project4Name: { en: "MATLAB Object Recognition Analysis", lt: "MATLAB Objektų Atpažinimo Analizė" },
