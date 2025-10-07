@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         project4Link: { en: "View Related Files on GitHub", lt: "Peržiūrėti Susijusius Failus GitHub" },
         project4ImageAlt: { en: "Matlab image analysis showing object recognition heatmaps", lt: "Matlab vaizdo analizė, rodanti objektų atpažinimo šilumos žemėlapius" },
         
-        project5Name: { en: "Galaxy Classification Using Deep Learning", lt: "Automatinė Kačių Šėrykla (Arduino/CAD)" },
+        project5Name: { en: "Galaxy Classification Using Deep Learning", lt: "Galaktikų klasifikavimas naudojant gilųjį mokymąsi" },
         project5Desc: { en: "Developed a deep learning model to automatically classify galaxies by their shape (Elliptical, Spiral, etc.) from raw astronomical images. \nUtilized a ResNet50V2 architecture with transfer learning, followed by fine-tuning with a low learning rate to specialize the model for galactic structures. Implemented image augmentation (rotations, flips, zooms) to create a robust, generalized model. The highly imbalanced dataset was undersampled to ensure each class was represen`ted equally during training. The final model, trained on 224x224 images, achieved 76% accuracy on the unseen test set, successfully distinguishing between four distinct galaxy morphologies.", lt: "Padariau giluminio mokymosi modelį, kuris automatiškai atpažįsta galaktikų formas (pvz., elipsines, spiralines) iš astronominių nuotraukų. Naudojau ResNet50V2 tinklą su perkeltu mokymusi ir vėliau jį patobulinau, taikydamas mažą mokymosi greitį, kad modelis geriau atpažintų galaktikas. Siekiant padidinti modelio patikimumą, naudojau nuotraukų keitimus (sukimus, apvertimus, priartinimus). Kadangi duomenų pasiskirstymas buvo nevienodas, sumažinau kai kurių klasių nuotraukų skaičių, siekiant užtikrinti vienodą pasiskirstymą. Modelis buvo apmokytas su 224x224 dydžio paveikslėliais ir pasiekė 76 % tikslumą atpažįstant keturias galaktikų rūšis iš nematytų nuotraukų." },
         project5Link: { en: "View Related Files on GitHub", lt: "Peržiūrėti Susijusius Failus GitHub" },
         project5ImageAlt: { en: "Photo of the assembled 3D-printed automatic cat feeder prototype", lt: "Surinktos 3D spausdintos automatinės kačių šėryklos prototipo nuotrauka" },
@@ -305,5 +305,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Other Initializations ---
     const yearSpan = document.getElementById('current-year');
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
 
 }); // End DOMContentLoaded
