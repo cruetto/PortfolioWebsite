@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navProjects: { en: "Projects", lt: "Projektai" },
         navContacts: { en: "Contacts", lt: "Kontaktai" },
         helloName: { en: "Konstantinas Ovčinikovas", lt: "Konstantinas Ovčinikovas" },
-        helloSubtitle: { en: "AI Systems Student & Problem Solver", lt: "DI Sistemų Studentas ir Problemų Sprendėjas" },
+        helloSubtitle: { en: "Junior AI Engineer & Problem Solver", lt: "DI Sistemų Studentas ir Problemų Sprendėjas" },
         
         aboutTitle: { en: "About Me", lt: "Apie Mane" },
         aboutPhotoAlt: { en: "Headshot photo of Konstantinas Ovčinikovas", lt: "Konstantino Ovčinikovo portretinė nuotrauka" },
