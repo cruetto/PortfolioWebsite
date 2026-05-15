@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Translations Dictionary ---
     const translations = {
-        pageTitle: { en: "Konstantinas Ovčinikovas - Portfolio", lt: "Konstantinas Ovčinikovas - Portfolio" },
+        pageTitle: { en: "Portfolio", lt: "Portfolio" },
         navAbout: { en: "About", lt: "Apie mane" },
         navProjects: { en: "Projects", lt: "Projektai" },
         navContacts: { en: "Contacts", lt: "Kontaktai" },
